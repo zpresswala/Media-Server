@@ -1,0 +1,89 @@
+.vbs-clearfix:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.clear-block {
+  clear: both;
+}
+
+.vbs-disable-button,
+.vbs-form-disabled {
+  opacity: 0.5;
+}
+
+.vbs-content {
+  width: 100%;
+}
+
+.vbs-video-play {
+  height: 50px;
+  background: #4ec170;
+}
+
+.vbs-no-scroll {
+  overflow: hidden;
+}
+
+.no_border {
+  border: none !important;
+}
+
+.vbs-logger textarea {
+  height: 120px;
+  width: 100%;
+}
+
+.vbs-fullscreen,
+.vbs-readermode {
+  overflow: hidden;
+}
+
+.vbs-fullscreen-exit,
+.vbs-reader-exit {
+  display: block;
+  background: url('../../images/striped-bg.png') repeat-x;
+  text-decoration: none;
+  height: 28px;
+  width: 45px;
+  line-height: 28px;
+  border-radius: 3px;
+  border: 1px solid #d3dadd;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 3;
+  font-size: 12px;
+  font-weight: bold;
+  color: #5f656d;
+  text-align: center;
+}
+
+.vbs-fullscreen-exit:hover {
+  box-shadow: 0 0 4px #449de0;
+}
+
+.vbs-fullscreen .vbs-white-popup-overlay {
+  display: none;
+}
+
+.vbs-form-field {
+  color: #6C6C6C;
+  border: 1px solid #BFBFBF;
+  margin: 0;
+  padding: 7px 10px;
+  width: 232px;
+  font-family: Tahoma, Helvetica;
+  font-size: 13px;
+  line-height: 17px;
+  height: 17px;
+  position: relative;
+  background: #FFF;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 #FFF;
+}
+
+.vbs-mt0 {
+  margin-top: 0;
+}

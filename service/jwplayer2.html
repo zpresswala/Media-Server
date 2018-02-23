@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VoiceBase JWPlayer - Example 2</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/jwplayer.vb-sdk-plugin.css"/>
+        <script type="text/javascript" src="js/lib/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.voicebase.js"></script>
+        <script type="text/javascript" src="js/lib/jquery.zclip.js"></script>
+        <!-- latest JWPlayer -->
+        <script type="text/javascript" src="http://jwpsrv.com/library/qhNfTJFiEeK7LSIACpYGxA.js"></script>
+        <style type="text/css">
+            .content {
+                width: 840px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <div id="jwplayer">
+                You need Flash player 8+ and JavaScript enabled to view this video.
+            </div>
+            
+                <script type='text/javascript'>
+                jwplayer('jwplayer').setup({
+                    file: 'http://d3mwaq4ir96ox7.cloudfront.net/7000/38000/37143_53c4efa45f606_tSWrTRFkhvU6qy4.mp4',
+                    primary: "html5",
+                    width: '100%',
+                    height: '480'
+                });
+                jQuery(document).ready(function(){
+                    jQuery('#jwplayer').voicebase({
+                        playerId: 'jwplayer',
+                        playerType: 'jwplayer',
+                        mediaID: '5459f8a1cb960',
+                        stream: 'http',
+                        example: true
+                    });
+                });
+            </script>
+        </div>
+
+    </body>
+</html>
+
+

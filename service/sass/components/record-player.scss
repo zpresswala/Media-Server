@@ -1,0 +1,469 @@
+.vbs-record-player {
+  height: 45px;
+  margin-top: 15px;
+  position: relative;
+
+  .vbs-record-timeline-wrap {
+    height: 8px;
+    padding: 10px 0;
+    position: relative;
+    user-select: none;
+  }
+
+  .vbs-record-timeline {
+    @include gradient-vertical-top(#d1d6da, #b8bfc4);
+    background-color: #c4cacf;
+    border-color: #babfc4;
+    border-top-color: #a1a8ae;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 10px;
+  }
+
+  &.vbs-video .vbs-volume-toolbar .vbs-volume-toolbar-block {
+    bottom: 35px;
+    top: auto;
+  }
+}
+
+.vbs-hide-controls .vbs-record-player {
+  display: none;
+}
+
+.vbs-record-timeline,
+.vbs-record-progress,
+.vbs-record_buffer {
+  @include gradient-vertical-top(#4898d8, #bfdcf4);
+  border: 1px solid #568ab6;
+  border-radius: 3px;
+  border-top-color: #85b0d5;
+  font-size: 5px;
+  height: 7px;
+  line-height: 8px;
+  overflow: hidden;
+}
+
+.vbs-record-progress,
+.vbs-record_buffer {
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  top: 10px;
+  z-index: 3;
+}
+
+.vbs-record_buffer {
+  @include gradient-vertical-top(#bfdcf4, #bfdcf4);
+  border-color: #78acd8;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.vbs-player-slider {
+  background: url('../../images/player_controls_n.png') 0 -128px;
+  cursor: pointer;
+  height: 20px;
+  margin: -8px 0 0 -8px;
+  overflow: hidden;
+  position: absolute;
+  top: 12px;
+  width: 19px;
+  z-index: 30;
+}
+
+//player control
+.vbs-player-control {
+  left: 0;
+  position: absolute;
+  top: 0;
+
+  a {
+    background: url('../../images/player_controls_n.png') no-repeat;
+    border-radius: 4px;
+    display: block;
+    float: left;
+    height: 30px;
+    margin-right: 4px;
+    outline: medium none;
+    width: 40px;
+  }
+
+  .vbs-play-btn {
+    background-position: 0 -1px;
+
+    &.vbs-playing {
+      background-position: 0 -33px;
+    }
+  }
+
+  .vbs-next-action-btn {
+    background-position: 0 -212px;
+  }
+
+  .vbs-next-notactive {
+    opacity: .5;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  .vbs-prev-btn {
+    background: url('../../images/back-btn.png')no-repeat;
+  }
+}
+
+.vbs-player-control a:hover,
+.vbs-record_player .vbs-player-control .vbs-playing,
+.vbs-player_control.vbs-play-btn.vbs-overlay:hover,
+.vbs-volume-toolbar .vbs-volume-btn:hover {
+  box-shadow: 0 0 4px #449de0;
+}
+
+// volume slider
+.vbs-volume-toolbar {
+  position: absolute;
+  right: 45px;
+  top: 0;
+
+  .vbs-volume-toolbar-block {
+    background: #f0f0f0 url('../../images/volume-bg.png') no-repeat center 3px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    display: none;
+    height: 110px;
+    left: 0;
+    padding: 23px 5px;
+    position: absolute;
+    top: 40px;
+    width: 28px;
+    z-index: 105;
+
+    .vbs-volume-slider {
+      cursor: pointer;
+      height: 110px;
+      left: 15px;
+      position: absolute;
+      top: 23px;
+      width: 7px;
+    }
+
+    .vbs-volume-slider-bg {
+      background: #ccc;
+      border: 1px solid #bbb;
+      border-radius: 3px;
+      height: 110px;
+      position: absolute;
+      top: 0;
+      width: 5px;
+      z-index: 90;
+    }
+
+    .vbs-volume-slider-full {
+      background: #06f;
+      border-radius: 3px;
+      bottom: -1px;
+      left: 1px;
+      position: absolute;
+      width: 5px;
+      z-index: 99;
+    }
+
+    .vbs-volume-slider-handler {
+      background: url('../../images/slider-handler.png') no-repeat;
+      height: 16px;
+      left: -4px;
+      margin-bottom: -8px;
+      position: absolute;
+      width: 15px;
+      z-index: 100;
+    }
+  }
+}
+
+.vbs-volume-btn {
+  background: url('../../images/player_controls_n.png') no-repeat 0 -97px;
+  border-radius: 4px;
+  display: block;
+  height: 30px;
+  width: 40px;
+}
+
+//classes when changes quantity of left btns from timeline
+.vbs-1-left-btns .vbs-timeline {
+  margin: 0 100px 0 50px;
+}
+
+.vbs-2-left-btns .vbs-timeline {
+  margin: 0 100px;
+}
+
+.vbs-3-left-btns .vbs-timeline {
+  margin: 0 100px 0 140px;
+}
+
+.vbs-1-right-btns .vbs-timeline {
+  margin-right: 60px !important;
+}
+
+.vbs-dragger {
+  cursor: pointer;
+  height: 9px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 31;
+}
+
+.vbs-player-wrapper {
+  position: relative;
+
+  .vbs-time {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    left: 0;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+  }
+}
+
+.vbs-time-in-player .vbs-ctime,
+.vbs-time-in-player .vbs-ftime {
+  color: #fff;
+}
+
+.jp-audio {
+  display: none;
+}
+
+.flowplayer {
+  background-color: #181818;
+}
+
+.vbs-playlist {
+  @include overflow-touch();
+
+  max-height: 200px;
+  margin-bottom: 4px;
+  position: relative;
+
+
+  .vbs-selected-playlist-item {
+    display: none;
+  }
+
+  .vbs-playlist-dropdown {
+    display: block;
+  }
+
+  &.collapsed {
+    .vbs-selected-playlist-item {
+      display: block;
+    }
+
+    .vbs-playlist-dropdown {
+      display: none;
+    }
+  }
+
+}
+
+.vbs-selected-playlist-item {
+  border: 1px solid #000;
+  background: #333;
+  padding: 12px;
+  position: relative;
+
+  .vbs-item-name {
+    cursor: pointer;
+    color: #fff;
+    font-size: 12px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+  }
+
+  i {
+    @include triangle-bottom();
+    position: absolute;
+    right: 12px;
+    top: 17px;
+  }
+}
+
+.vbs-playlist-item {
+  background: #222;
+  cursor: pointer;
+  color: #9c9c9c;
+  font-size: 12px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+  margin: 0;
+  padding: 12px;
+  border: 1px solid #000;
+
+  &.active,
+  &:hover {
+    background: #333;
+    color: #fff;
+  }
+}
+
+.vbs-time-name-wrapper-narrow {
+  display: none;
+}
+
+// Retina mode
+.vbs-retina {
+  .vbs-player-control {
+    a {
+      background: url('../../images/player_controls_n2.png') no-repeat;
+      background-size: 40px 184px;
+    }
+
+    .vbs-play-btn {
+      background-position: 0 0;
+
+      &.vbs-playing {
+        background-position: 0 -32px;
+      }
+    }
+
+    .vbs-next-action-btn {
+      background-position: 0 -122px;
+    }
+
+    .vbs-prev-btn {
+      background: url('../../images/skipback-button@2x.png')no-repeat;
+      background-size: 40px 30px;
+    }
+
+    .vbs-player-slider {
+      background: url('../../images/player_controls_n2.png') 0 -80px;
+      background-size: 33px 155px;
+    }
+
+    .vbs-volume-btn {
+      background: url('../../images/player_controls_n2.png') no-repeat 0 -65px;
+      background-size: 40px 184px;
+    }
+  }
+}
+
+//fullscreen and reader mode
+.vbs-fullscreen,
+.vbs-readermode {
+  .vbs-controls-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .vbs-controls-box {
+    margin: 0 10%;
+    position: relative;
+
+    .vbs-record-player {
+      margin: 30px 360px 0 0;
+    }
+  }
+
+  .vbs-hide-controls .vbs-record-player {
+    display: block;
+  }
+}
+
+.vbs-fullscreen {
+  .vbs-player-wrapper {
+    @include fullscreen();
+    bottom: 85px !important;
+    top: 0 !important;
+
+    >:first-child {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+
+  .vbs-controls-wrapper {
+    top: auto;
+    bottom: 0;
+    background-color: #000;
+    height: 85px;
+  }
+
+  .vbs-record-player.vbs-video .vbs-volume-toolbar .vbs-volume-toolbar-block {
+    bottom: 35px;
+    left: 0;
+  }
+}
+
+.vbs-readermode {
+  .vbs-record-player.vbs-video .vbs-volume-toolbar .vbs-volume-toolbar-block {
+    bottom: auto;
+    top: 35px;
+  }
+}
+
+// less-600 mode
+.less-600px {
+  .vbs-time-name-wrapper-narrow {
+    display: block;
+    position: relative;
+    top: 7px;
+
+    br {
+      display: none;
+    }
+
+    span {
+      font-size: 13px;
+    }
+
+    .vbs-time {
+      color: #999;
+      margin-right: 25px;
+    }
+
+    .vbs-voice-name {
+      color: #999;
+      font-weight: bold;
+    }
+  }
+
+  .vbs-1-left-btns .vbs-time-name-wrapper-narrow {
+    margin-left: 60px;
+  }
+
+  .vbs-2-left-btns .vbs-time-name-wrapper-narrow {
+    margin-left: 100px;
+  }
+
+  .vbs-3-left-btns .vbs-time-name-wrapper-narrow {
+    margin-left: 135px;
+  }
+
+  .vbs-section-header .vbs-section-title .vbs-voice-name {
+    display: none;
+  }
+
+  .vbs-record-player {
+    height: 75px;
+  }
+
+  .vbs-timeline {
+    margin: 0;
+    position: relative;
+    top: 28px;
+  }
+
+}
+
+.jwlogo {
+  display: none;
+}
+

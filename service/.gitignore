@@ -1,0 +1,7 @@
+/nbproject
+/node_modules/*
+/.idea/*
+npm-debug.log
+/Oreka/build/*
+/build/*
+/css/maps/*

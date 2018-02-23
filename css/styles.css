@@ -1,0 +1,71 @@
+.record-player {
+    margin-top: 25px;
+    position: relative;
+}
+.record-player .record-timeline {
+    height: 8px;
+    padding: 5px 0;
+    width: 1138px;
+    background-color: #1cbee6;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 18px 18px 18px 18px;
+    -moz-border-radius: 18px 18px 18px 18px;
+    -webkit-border-radius: 18px 18px 18px 18px;
+    border: 0px solid #000000;
+}
+
+.marker {
+    cursor: pointer;
+    margin-bottom: 10px;
+    z-index: 30; 
+}
+
+.transcript, #transcript {
+    clear: both;
+    width: inherit;
+    height: 80px;
+    overflow-y: scroll;
+}
+
+.clearfix {
+    clear: both;
+    margin-top: 25px;
+}
+
+small {
+    font-size: 56% !important;
+}
+
+.MACHINECOMPLETE {
+    padding: 8px;
+    color: #FFF;
+    background-color: #5cb85c;
+}
+
+.HUMANCOMPLETE {
+    padding: 8px;
+    color: #FFF;
+    background-color: #4d80ff;
+}
+
+.ERROR {
+    padding: 8px;
+    color: #FFF;
+    background-color: #e33a01;
+}
+
+div.tooltip-inner {
+    max-width: 640px;
+}
+
+tr.row-success {
+    background-color: #ffb31a !important;
+}
+
+tr.row-danger {
+    background-color: #ff1a1a !important;
+}

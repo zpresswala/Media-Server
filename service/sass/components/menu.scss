@@ -1,0 +1,123 @@
+// start edit-menu 
+
+.vbs-keyword_controls {
+  border-top: 1px solid #ccc;
+  margin: 0 auto;
+  padding: 2px 0;
+  height: 24px;
+  display: block;
+  text-align: center;
+
+  span.vbs-vbe {
+    display: inline-block;
+    padding-left: 0 !important;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    padding-bottom: 0;
+    background-image: url('../../images/keywords_sort.png');
+    margin-right: 3px;
+    text-indent: -20000px;
+    cursor: pointer;
+  }
+}
+
+.vbs-voicebase_up {background-position: 0 0;}
+
+.vbs-voicebase_down {background-position: 0 -24px;}
+
+.vbs-voicebase_remove {background-position: 0 -48px;}
+
+.vbs-voicebase_first {background-position: 0 -72px;}
+
+.vbs-voicebase_up:hover {background-position: -24px 0;}
+
+.vbs-voicebase_down:hover {background-position: -24px -24px;}
+
+.vbs-voicebase_remove:hover {background-position: -24px -48px;}
+
+.vbs-voicebase_first:hover {background-position: -24px -72px;}
+
+.vbs-vbcmenu {
+  background: #eee;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  list-style-type: none;
+  margin: 0;
+  min-width: 115px;
+  max-width: 250px;
+  padding: 3px;
+  position: absolute;
+  z-index: 10001;
+
+  li {
+    padding: 0;
+    background-color: #eee;
+    position: relative;
+    user-select: none;
+
+    a {
+      text-decoration: none;
+      display: block;
+      padding: 5px 2px 5px 10px;
+      color: #000;
+      cursor: default;
+
+      span {
+        display: none;
+      }
+    }
+
+    #vbc_move:hover {
+      background: none;
+    }
+
+    &.vbs-disabled {
+      color: #666;
+
+      &:hover,
+      &.hover {
+        cursor: default;
+        background-color: #eee;
+      }
+    }
+
+    &.vbs-separator {
+      padding-bottom: 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    &:hover,
+    &.vbs-hover {
+      cursor: default;
+      background-color: #39f;
+    }
+  }
+
+  #vbc_share .at4-icon {
+    display: none;
+  }
+}
+// end edit-menu
+
+.ui-icon,
+.ui-widget-content .ui-icon {
+  background-image: url('../../images/ui-icons_454545_256x240.png');
+}
+
+.ui-icon-gripsmall-diagonal-se {
+  background-position: -83px -224px;
+}
+
+.vbs-scroll .vbs-topics,
+.vbs-scroll .vbs-keywords-list-wrapper {
+  @include overflow-touch(visible);
+
+  height: 100%;
+  overflow: auto;
+}
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VoiceBase Kaltura</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/jwplayer.vb-sdk-plugin.css"/>
+        <script type="text/javascript" src="js/lib/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.voicebase.js"></script>
+        <script type="text/javascript" src="js/lib/jquery.zclip.js"></script>
+        <style type="text/css">
+            .content {
+                width: 840px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <div id="app">
+                <div id="kaltura_player_1405663685" style="width:100%;height:480px;">
+                    <span property="dc:description" content=""></span>
+                    <span property="media:title" content="guitar 2"></span>
+                    <span property="media:width" content="100%"></span>
+                    <span property="media:height" content="480"></span>
+                </div>
+            </div>
+
+            <script type="text/javascript" src="http://html5video.org/kaltura-player/mwEmbedLoader.php"></script>
+
+            <script type='text/javascript'>
+                mw.setConfig( 'KalturaSupport.LeadWithHTML5', true );
+
+                kWidget.embed({
+                    'targetId': 'kaltura_player_1405663685',
+                    'wid': '_1753361',
+                    'uiconf_id' : '25101282',
+                    'entry_id' : '1_tem8e955',
+                    'flashvars':{
+                        'externalInterfaceDisabled' : false
+                    },
+                    'readyCallback': function( playerId ){
+                        window.kdpReady();
+                    }
+
+                });
+
+                jQuery(document).ready(function(){
+                    jQuery('#app').voicebase({
+                        playerId: 'kaltura_player_1405663685',
+                        playerType: 'kaltura',
+                        mediaID: '54780d9bc932d',
+                        stream: 'http',
+                        example: true
+                    });
+                });
+            </script>
+        </div>
+
+    </body>
+</html>
+
+

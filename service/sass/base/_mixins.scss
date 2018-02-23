@@ -1,0 +1,47 @@
+@mixin fullscreen() {
+  position: fixed !important;
+  z-index: 9999 !important;
+  left: 0 !important;
+  top: 75px !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  margin: 0 !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+@mixin gradient-vertical-top($first-color, $second-color) {
+  background: $first-color; // Fallback solid color for old browsers 
+  background: linear-gradient(to top, $first-color 0%, $second-color 100%); // W3C 
+  background: -moz-linear-gradient(bottom, $first-color 0%, $second-color 100%); // FF 3.6+ 
+  background: -ms-linear-gradient(bottom, $first-color 0%, $second-color 100%); // IE 10+ 
+  background: -o-linear-gradient(bottom, $first-color 0%, $second-color 100%); // Opera 11.10+ 
+  background: -webkit-linear-gradient(bottom, $first-color 0%, $second-color 100%); // Chrome 10+, Safari 5.1+
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0%, $first-color), color-stop(100%, $second-color)); // Chrome, Safari 4+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= '#{$first-color}', endColorstr= '#{$second-color}', GradientType=0); // IE 6-9 
+}
+
+@mixin gradient-vertical-bottom ($first-color: #fff, $second-color: #ddd) {
+  background: $first-color; // Fallback solid color for old browsers 
+  background: linear-gradient(to bottom, $first-color 0%, $second-color 100%); // W3C 
+  background: -moz-linear-gradient(top, $first-color 0%, $second-color 100%); // FF 3.6+ 
+  background: -ms-linear-gradient(top, $first-color 0%, $second-color 100%); // IE 10+ 
+  background: -o-linear-gradient(top, $first-color 0%, $second-color 100%); // Opera 11.10+ 
+  background: -webkit-linear-gradient(top, $first-color 0%, $second-color 100%); // Chrome 10+, Safari 5.1+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $first-color), color-stop(100%, $second-color)); // Chrome, Safari 4+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= '#{$first-color}', endColorstr= '#{$second-color}', GradientType=0); // IE 6-9 
+}
+
+@mixin triangle-bottom ($size: 4px, $color: #fff) {
+  width: 0;
+  height: 0;
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+  border-top: $size solid $color;
+}
+
+@mixin overflow-touch($type: auto) {
+  overflow: $type;
+  -webkit-overflow-scrolling: touch;
+}
+

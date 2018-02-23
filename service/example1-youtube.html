@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VoiceBase Youtube</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/jwplayer.vb-sdk-plugin.css"/>
+        <script type="text/javascript" src="js/lib/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.voicebase.js"></script>
+        <script type="text/javascript" src="js/lib/swfobject.js"></script>
+        <script type="text/javascript" src="js/lib/jquery.zclip.js"></script>
+        <style type="text/css">
+            .content {
+                width: 840px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <div id="ytapiplayer">
+                You need Flash player 8+ and JavaScript enabled to view this video.
+            </div>
+            <script type='text/javascript'>
+                var params = {allowScriptAccess: "always", wmode: "opaque"};
+                var atts = {id: "ytplayer"};
+                swfobject.embedSWF("http://www.youtube.com/v/h6QeDfbF6QU?enablejsapi=1&controls=0&showinfo=0&playerapiid=ytplayer",
+                        "ytapiplayer", "840", "356", "8", null, null, params, atts);
+                jQuery(document).ready(function(){
+                    jQuery('#ytapiplayer').voicebase({
+                        playerId: 'ytplayer',
+                        playerType: 'youtube',
+                        mediaID: '546d91745d48d',
+                        lineBreak: '1.0',
+                        example: true
+                    });
+                });
+            </script>
+        </div>
+
+    </body>
+</html>
+
+

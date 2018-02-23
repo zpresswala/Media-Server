@@ -1,0 +1,74 @@
+.vbs-select-wrapper {
+  background: url('../../images/title-bg.png') repeat-x;
+  z-index: 100;
+  position: relative;
+
+  .vbs-select-title {
+    border-left: 1px solid #c2c2c2;
+    height: 32px;
+    padding-left: 15px;
+    padding-right: 25px;
+    line-height: 32px;
+    color: #0073c0;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 136px;
+
+    &:after {
+      content: '';
+      display: block;
+      height: 32px;
+      width: 7px;
+      position: absolute;
+      top: 0;
+      right: 9px;
+      background: url('../../images/arrow-down.png') no-repeat  center;
+    }
+  }
+
+  .vbs-select-dropdown {
+    @include overflow-touch();
+
+    position: absolute;
+    top: 32px;
+    right: -1px;
+    width: auto;
+    min-width: 100%;
+    z-index: 20;
+    background: #fff;
+    border: 1px solid #c2c2c2;
+    max-height: 214px;
+    overflow-x: hidden;
+    display: none;
+
+    li {
+      cursor: pointer;
+      padding: 5px 20px 5px 15px;
+      white-space: nowrap;
+      color: #0073c0;
+      line-height: 32px;
+
+      &:hover {
+        background: #e9ebec;
+      }
+
+      &.vbs-disabled,
+      .vbs-disabled:hover {
+        color: #bebebe;
+        background: #fafafa;
+        cursor: default;
+      }
+    }
+  }
+}
+
+.vbs-select-language-wrapper {
+  float: right;
+}
+
+

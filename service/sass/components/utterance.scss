@@ -1,0 +1,284 @@
+//utterance functionality styles
+.vbs-utterance-markers {
+  position: absolute;
+  top: 35px;
+  height: auto;
+
+
+  .vbs-utter-1 {
+    background: #977fa8;
+  }
+
+  .vbs-utter-2 {
+    background: #c09b60;
+  }
+
+  .vbs-utter-3 {
+    background: #a3ccc2;
+  }
+
+  .vbs-utter-4 {
+    background: #b869b3;
+  }
+
+  .vbs-utter-5 {
+    background: #ba628b;
+  }
+
+  .vbs-utter-6 {
+    background: #6670ab;
+  }
+
+  .vbs-utter-7 {
+    background: #da96ce;
+  }
+
+  .vbs-utter-8 {
+    background: #c17b7b;
+  }
+
+  .vbs-utter-9 {
+    background: #8eb4ca;
+  }
+
+  .vbs-utter-10 {
+    background: #7fa89e;
+  }
+
+}
+
+.vbs-utter-marker {
+  position: absolute;
+  height: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.vbs-utter-tooltip {
+  position: absolute;
+  z-index: 999;
+  width: 110px;
+  bottom: 13px;
+  left: 50%;
+  margin-left: -65px;
+  padding: 7px 10px;
+  background: #474747;
+  border-radius: 5px;
+  display: none;
+  text-align: center;
+
+  .vbs-utter-title {
+    color: #fff;
+    font-size: 10px;
+    margin: 5px;
+
+    //  overflow: hidden;
+    //   standart ellipsis
+    //  text-overflow: ellipsis;
+    //  white-space: nowrap;
+    //
+    //multiline ellipsis. Only webkit browsers
+    //      display: -webkit-box;
+    //      -webkit-box-orient: vertical;
+    //      line-height: 1.4;
+    //      -webkit-line-clamp: 3;
+    //      max-height: 40px;
+  }
+
+  .vbs-utter-time {
+    color: #aaa;
+    font-size: 10px;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-top: 7px solid #474747;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    bottom: -7px;
+    left: 50%;
+    margin-left: -7px;
+  }
+}
+
+.vbs-utter-marker:hover .vbs-utter-tooltip {
+  display: block;
+}
+
+.vbs-utter-row1 {
+  top: 0;
+}
+
+.vbs-utter-row2 {
+  top: 4px;
+}
+
+.vbs-utter-row3 {
+  top: 8px;
+}
+
+.vbs-utter-row4 {
+  top: 12px;
+}
+
+.vbs-utter-row5 {
+  top: 16px;
+}
+
+.vbs-utter-row6 {
+  top: 20px;
+}
+
+.vbs-utter-row7 {
+  top: 24px;
+}
+
+.vbs-utter-row8 {
+  top: 28px;
+}
+
+.vbs-utter-row9 {
+  top: 32px;
+}
+
+.vbs-utter-row10 {
+  top: 36px;
+}
+
+.vbs-utterance-block {
+  border-radius: 5px;
+  background: #f0f2f3;
+  border: 1px solid #c8cfd3;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+  margin-top: 8px;
+  position: relative;
+
+  .vbs-utterance-title {
+    float: left;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #636971;
+    font-weight: 700;
+    width: 26%;
+
+    p {
+      padding: 11px 13px 11px 14px;
+      line-height: 1.4;
+    }
+  }
+
+  .vbs-utterance-list {
+    float: left;
+    width: 73%;
+    border-left: 1px solid #c8cfd3;
+
+    ul {
+      margin-right: -5%;
+      padding: 10px 10px 0;
+    }
+
+    li {
+      font-size: 12px;
+      font-weight: 700;
+      float: left;
+      margin-bottom: 12px;
+      width: 20%;
+      margin-right: 5%;
+
+      label {
+        padding-left: 18px;
+        position: relative;
+        padding-right: 20px;
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+
+    .vbs-utter-num {
+      color: #aaa;
+      margin-left: 2px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    input[type='checkbox'] {
+      position: absolute;
+      top: 1px;
+      left: 0;
+      margin-right: 5px;
+      width: 13px;
+      height: 13px;
+    }
+  }
+}
+
+.vbs-utterance-list .vbs-utter-1 {
+  color: #977fa8;
+}
+
+.vbs-utterance-list .vbs-utter-2 {
+  color: #c09b60;
+}
+
+.vbs-utterance-list .vbs-utter-3 {
+  color: #a3ccc2;
+}
+
+.vbs-utterance-list .vbs-utter-4 {
+  color: #b869b3;
+}
+
+.vbs-utterance-list .vbs-utter-5 {
+  color: #ba628b;
+}
+
+.vbs-utterance-list .vbs-utter-6 {
+  color: #6670ab;
+}
+
+.vbs-utterance-list .vbs-utter-7 {
+  color: #da96ce;
+}
+
+.vbs-utterance-list .vbs-utter-8 {
+  color: #c17b7b;
+}
+
+.vbs-utterance-list .vbs-utter-9 {
+  color: #8eb4ca;
+}
+
+.vbs-utterance-list .vbs-utter-10 {
+  color: #7fa89e;
+}
+
+.less-600px .vbs-utterance-block .vbs-utterance-list li {
+  width: 28%;
+  margin-right: 5%;
+}
+
+.less-600px.less-460px .vbs-utterance-block .vbs-utterance-list li {
+  width: 45%;
+  margin-right: 5%;
+}
+
+.less-600px .vbs-record-player {
+  height: 100px;
+}
+
+.less-600px.less-460px .vbs-utterance-block .vbs-utterance-title {
+  font-size: 12px;
+}
+
+.less-600px.less-460px .vbs-powered-by-label {
+  display: none;
+}
+

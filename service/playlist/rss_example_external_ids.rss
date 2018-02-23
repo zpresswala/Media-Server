@@ -1,0 +1,14 @@
+<rss version="2.0" xmlns:jwplayer="http://rss.jwpcdn.com/">
+    <channel>
+        <item>
+            <title>Lecture 04: sep 10</title>
+            <jwplayer:source file="http://uwinnipegcdn.daemondefense.com/bio_hum_con/03-bio_hum_con-sep08.mp4" />
+            <jwplayer:vbs_externalid>04-bio_hum_con-sep10</jwplayer:vbs_externalid>
+        </item>
+        <item>
+            <title>Lecture 02: sep 05</title>
+            <jwplayer:source file="http://uwinnipegcdn.daemondefense.com/bio_hum_con/02-bio_hum_con-sep05.mp4" />
+            <jwplayer:vbs_externalid>02-bio_hum_con-sep05</jwplayer:vbs_externalid>
+        </item>
+    </channel>
+</rss>

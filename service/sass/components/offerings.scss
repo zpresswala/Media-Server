@@ -1,0 +1,451 @@
+.vbs-offerings-popup {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  width: 820px;
+  margin-left: -420px;
+  height: auto;
+  background: #fff;
+  border: 1px solid #ccc;
+  z-index: 999999;
+  overflow-y: auto;
+  display: none;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+
+
+  .vbs-offerings-popup-close {
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    color: #ccc;
+    text-decoration: none;
+
+    &:hover {
+      color: #000;
+      opacity: 0.5;
+    }
+  }
+
+  .vbs-offerings-popup-header-title {
+    margin: 0;
+    color: #363636;
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+}
+
+.vbs-ajax-loader {
+  background: url('../../images/ajax-loader-blue.gif') no-repeat center center;
+  background-size: 95px 95px;
+  height: 135px;
+}
+
+
+.vbs-humanRequest {
+  border: 0;
+  border-bottom: 1px solid #d5d5d5;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  width: 793px;
+
+  table {
+    border: 0;
+    border-collapse: collapse;
+    clear: both;
+    border-radius: 6px;
+    background: #fff;
+
+    tr {
+      border-bottom: 1px solid #d5d5d5;
+      margin: 0;
+      padding: 0;
+
+      &.vbs-row-last {
+        border-bottom: 0;
+      }
+    }
+
+    th {
+      color: #fff;
+      font-family: Arial;
+      font-weight: bold;
+      border-bottom: 1px solid #d5d5d5;
+      background-color: #0176c2;
+      margin: 0;
+      font-size: 14px;
+      line-height: 16px;
+      padding-bottom: 3px;
+      padding-top: 5px;
+      text-shadow: none;
+
+      &.vbs-summary {
+        border-radius: 6px 0 0;
+        vertical-align: middle;
+        padding-left: 10px;
+        width: 135px;
+        text-align: left;
+      }
+
+      &.vbs-delivery {
+        min-width: 105px;
+        border-right: 0;
+      }
+
+      &.vbs-last {
+        border-radius: 0 6px 0 0;
+        text-align: left;
+      }
+    }
+
+    td {
+      text-align: left;
+      padding: 0;
+      margin: 0;
+      font-family: Arial;
+      font-size: 13px;
+      line-height: 17px;
+
+      strong {
+        font-size: 15px;
+        font-family: Arial;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .vbs-accuracy {
+    border-right: 1px solid #d5d5d5;
+    vertical-align: middle;
+    color: #989898;
+    font-size: 12px;
+    padding-left: 10px;
+
+    h5 {
+      font-size: 15px;
+      margin: 0;
+      padding: 0;
+      color: #363636;
+      font-family: Arial;
+      font-weight: bold;
+      line-height: 26px;
+      text-shadow: 0 1px 0 #fff;
+    }
+  }
+
+  .vbs-delivery {
+    border-right: 1px solid #d5d5d5;
+
+    .vbs-offeringCell {
+      background-color: #f3f3f3;
+      color: #64a838;
+      position: relative;
+      height: 55px;
+      line-height: 55px;
+      font-size: 18px;
+      font-family: Arial;
+      font-weight: normal;
+      text-align: center;
+      margin: 0;
+      cursor: pointer;
+
+      span {
+        display: none;
+        color: #CFE9C3;
+        font-size: 13px;
+        text-shadow: 2px 2px 4px #539A2A;
+      }
+
+      strong {
+        font-size: 16px;
+      }
+
+      &:hover,
+      &.selected {
+        @include gradient-vertical-top(#81D14F, #5EAD30);
+        color: #FFF;
+      }
+
+      &:hover span {
+        display: inline;
+      }
+
+
+    }
+  }
+
+  .vbs-review {
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .vbs-recommended {
+    vertical-align: middle;
+    text-align: left;
+    padding-right: 10px;
+  }
+}
+
+.vbs-humanCost {
+  color: #363636;
+  white-space: normal;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: bold;
+  font-family: Arial;
+  width: 50%;
+  float: left;
+
+  .vbs-cost-value {
+    color: #64A838;
+  }
+
+  .vbs-product-description,
+  .vbs-product-description-value {
+    font-weight: normal;
+    line-height: 20px;
+    font-size: 13px;
+    color: #999;
+  }
+}
+
+.vbs-offering-buttons {
+  position: relative;
+  float: right;
+  font-size: 12px;
+  font-family: Arial;
+  font-weight: bold;
+  line-height: 19px;
+}
+
+.vbs-offering-btn {
+  box-sizing: border-box;
+  display: block;
+  float: left;
+  text-decoration: none;
+  position: relative;
+  margin: 0 0 12px 13px;
+  border: 1px solid #9AB75D;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px #E9E9E9;
+  height: 41px;
+  color: #FFF;
+  text-shadow: 0 1px 0 #3C6CCB;
+  padding: 8px 19px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 24px;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.vbs-aggree-btn {
+  @include gradient-vertical-bottom(#9ECB57, #CBE285);
+  width: 214px;
+
+  &:hover {
+    @include gradient-vertical-bottom(#CBE285, #9ECB57);
+  }
+}
+
+.vbs-cancel-btn {
+  @include gradient-vertical-bottom(#FE4B4B, #FE7474);
+  border-color: #D71717;
+
+  &:hover {
+    @include gradient-vertical-bottom(#FE7474, #FE4B4B);
+  }
+
+}
+
+.vbs-human-terms {
+  padding: 0;
+  position: absolute;
+  top: 49px;
+  left: 12px;
+  font-size: 10px;
+  line-height: 16px;
+  font-family: Arial;
+  color: #8C8C8C;
+
+  a {
+    color: #0079C0;
+    font-family: Arial;
+    font-size: 11px;
+    line-height: 16px;
+    padding: 0;
+    display: inline;
+    margin: 0;
+    text-decoration: none;
+  }
+}
+
+.vbs-confirm-offer-container {
+  display: none;
+
+  .vbs-offering-btn {
+    margin-left: 0;
+    margin-top: 15px;
+    margin-right: 15px;
+  }
+
+}
+
+.vbs-confirm-offer-inner-container {
+  background: #EBEBEB;
+  border: 1px solid #E2E2E2;
+  border-bottom-color: #CBCBCB;
+  border-top-color: #F0F0F0;
+  padding: 15px 18px 18px !important;
+  box-shadow: 0 1px 3px #E2E2E2;
+  border-radius: 8px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  color: #999;
+
+  .vbs-order-details {
+    list-style: none;
+    color: #999;
+    width: 742px;
+    float: left;
+    margin: 14px 0 36px;
+    padding: 0 0 0 12px;
+
+    li {
+      width: 100%;
+      float: left;
+      margin-bottom: 2px;
+
+      dl {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        float: left;
+      }
+
+      dt {
+        margin: 0;
+        width: 269px;
+        float: left;
+        padding: 0 0 0 5px;
+      }
+
+      dd {
+        padding: 0;
+        margin: 0;
+        width: 150px;
+        float: left;
+        text-align: center;
+
+        &.vbs-dd-length {
+          width: 218px;
+        }
+
+        &.vbs-dd-last {
+          width: 93px;
+          float: right;
+          text-align: left;
+        }
+      }
+
+      &.vbs-order-details-title {
+        margin-bottom: 6px;
+
+        dl {
+          font-weight: bold;
+          color: #696969;
+          font-size: 14px;
+        }
+
+        dt {
+          padding-left: 0;
+          width: 274px;
+        }
+      }
+
+      &.vbs-order-details-total {
+        margin-top: 18px;
+        border-top: 1px solid #ccc;
+        padding-top: 4px;
+
+        dt {
+          font-weight: bold;
+          color: #696969;
+          font-size: 14px;
+        }
+
+        dd {
+          color: #696969;
+          line-height: 14px;
+        }
+      }
+    }
+  }
+
+  .vbs-orderform-notesfortranscriber {
+    width: 348px;
+    height: 142px;
+    overflow: auto;
+    resize: none;
+  }
+
+  .vbs-offer-text {
+    line-height: 19px;
+    margin-top: 10px;
+  }
+
+  .vbs-offer-text2 {
+    line-height: 1.15;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+}
+
+.vbs-confirmation-response-info {
+  display: none;
+
+  .vbs-response-message {
+    color: #9ECB57;
+    margin-top: 15px;
+  }
+
+  .vbs-response-message-label {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+
+    a {
+      color: #696969;
+    }
+  }
+
+  .vbs-offerings-popup-close {
+    position: relative;
+    margin-left: 15px;
+    margin-top: 0;
+    color: #FFF;
+    font-size: 20px;
+  }
+
+}
+
+.vbs-response-error-message {
+  color: #FE5151;
+  margin-top: 10px;
+}
+
+.vbs-confirm-order-loader .vbs-ajax-loader {
+  background: url('../../images/ajax-loader-blue.gif') no-repeat;
+  background-size: 35px 35px;
+  height: 35px;
+}

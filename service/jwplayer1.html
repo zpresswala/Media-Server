@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VoiceBase JWPlayer - Example 1</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/jwplayer.vb-sdk-plugin.css"/>
+        <script type="text/javascript" src="js/lib/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.voicebase.js"></script>
+        <script type="text/javascript" src="js/lib/jquery.zclip.js"></script>
+        <!-- latest JWPlayer -->
+        <script type="text/javascript" src="http://jwpsrv.com/library/qhNfTJFiEeK7LSIACpYGxA.js"></script>
+        <script>
+            var _LTracker = _LTracker || [];
+            _LTracker.push({'logglyKey': 'c46ea824-6d08-456e-9932-6b1ffe00ffae' });
+        </script>
+
+        <style type="text/css">
+            .content {
+                width: 840px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <div id="jwplayer">
+                You need Flash player 8+ and JavaScript enabled to view this video.
+            </div>
+            
+                <script type='text/javascript'>
+                jwplayer('jwplayer').setup({
+                    file: 'http://d3mwaq4ir96ox7.cloudfront.net/7000/38000/37142_53c4ef1ee9b7c_sWObIqZ38M4w7jX.mp4',
+                    primary: "flash", // rtmp streaming is working only in flash
+                    width: '100%',
+                    height: '480'
+                });
+                jQuery(document).ready(function(){
+                    jQuery('#jwplayer').voicebase({
+                        playerId: 'jwplayer',
+                        playerType: 'jwplayer',
+                        mediaID: '5451cc68bd262',
+                        lineBreak: '1.0',
+                        stream: 'rtmp',
+                        example: true
+                    });
+                });
+            </script>
+        </div>
+
+    </body>
+</html>
+
+

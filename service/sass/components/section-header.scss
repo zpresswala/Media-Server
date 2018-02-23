@@ -1,0 +1,136 @@
+.vbs-section-header {
+  background: url('../../images/title-bg.png') repeat-x;
+  border: 1px solid #c8cfd3;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px #e6e6e6;
+  height: 32px;
+  line-height: 32px;
+  position: relative;
+
+  .vbs-section-title {
+    background: url('../../images/grey-arrow-down.png') 13px center no-repeat;
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+
+    span {
+      font-size: 13px;
+    }
+
+    .vbs-section-name {
+      color: #636971;
+      font-weight: bold;
+      margin-left: 33px;
+      margin-right: 25px;
+      text-transform: uppercase;
+    }
+
+    .vbs-time {
+      color: #999;
+      margin-right: 25px;
+    }
+
+    .vbs-voice-name {
+      color: #999;
+      font-weight: bold;
+    }
+
+    &.vbs-no-toggle {
+      background: none !important;
+
+      .vbs-section-name {
+        margin-left: 13px !important;
+      }
+    }
+
+    &.vbs-hidden {
+      background: url('../../images/grey-arrow-right.png') 13px center no-repeat;
+    }
+  }
+
+  .vbs-section-btns {
+    background: url('../../images/striped-bg.png') repeat-x;
+    border-left: 1px solid #c2c2c2;
+    border-radius: 0 5px 5px 0;
+    float: right;
+    height: 100%;
+    padding-left: 11px;
+
+    li {
+      float: left;
+      margin-right: 13px;
+      position: relative;
+
+      > a {
+        display: block;
+        height: 32px;
+        width: 29px;
+      }
+    }
+  }
+}
+
+.vbs-media-block {
+
+  .vbs-section-header {
+
+    .vbs-section-title {
+      background: none;
+      cursor: auto;
+
+      .vbs-section-name {
+        margin-left: 13px;
+
+        &.vbs-snv {
+          display: none;
+        }
+      }
+    }
+
+    .vbs-section-btns {
+      background: none;
+      border-left: 0;
+    }
+
+  }
+
+  &.vbs-video {
+    margin-bottom: 0;
+
+    .vbs-section-header {
+      .vbs-section-title {
+        background: url('../../images/grey-arrow-down.png') 13px center no-repeat;
+        cursor: pointer;
+
+        .vbs-section-name {
+          &.vbs-sna {
+            display: none;
+          }
+
+          &.vbs-snv {
+            display: inline-block;
+          }
+        }
+
+        &.vbs-hidden {
+          background: url('../../images/grey-arrow-right.png') 13px center no-repeat;
+        }
+
+      }
+    }
+  }
+}
+
+.vbs-keywords-block .vbs-section-header .vbs-section-btns {
+  float: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.vbs-keywords-block.vbs-no-header .vbs-section-header {
+  display: none;
+}
+

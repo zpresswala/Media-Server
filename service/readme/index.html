@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>VoiceBase Player Plugin Documentation</title>
+    <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/styles_bootstrap.css"/>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/googlecode.min.css">
+
+</head>
+<body data-spy="scroll" data-target="#myScrollspy">
+    <header id="top" class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="http://www.voicebase.com/" class="logo" target="_blank"></a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="players.html">Players</a>
+                    </li>
+                    <li>
+                        <a href="params.html">Parameters</a>
+                    </li>
+                    <li>
+                        <a href="methods.html">Methods</a>
+                    </li>
+                    <li>
+                        <a href="webhooks.html">WebHooks</a>
+                    </li>
+                    <li>
+                        <a href="buttons.html">Buttons</a>
+                    </li>
+                    <li>
+                        <a href="widget.html">Search Widget</a>
+                    </li>
+                    <li>
+                        <a href="vb-api-devguide-07162014.pdf">API Doc</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10" role="main">
+                <div class="docs-section">
+                    <h2 id="jwplayer" class="">JW Player</h2>
+                    <p>
+                        <strong>Documentation:</strong>
+                        <a href="http://www.jwplayer.com/" target="_blank">http://www.jwplayer.com</a>
+                    </p>
+                    <ol>
+                        <li>
+                            <p>Connect VoiceBase and JW Player files to your code:</p>
+                    <pre><code class="html">
+                        &lt;link rel=&quot;stylesheet&quot; href=&quot;css/jwplayer.vb-sdk-plugin.css&quot;/&gt;
+                        &lt;script src=&quot;js/jquery.voicebase.js&quot;&gt;&lt;/script&gt;
+                        &lt;script src=&quot;http://jwpsrv.com/library/qhNfTJFiEeK7LSIACpYGxA.js&quot;&gt;&lt;/script&gt;
+                    </code></pre>
+                        </li>
+                        <li>
+                            <p>Insert the block for player initialization</p>
+                            <pre><code class="html">&lt;div id=&quot;playerBlock&quot;&gt;&lt;/div&gt;</code></pre>
+
+                        </li>
+                        <li>
+                            <p>Initiate player and plugin</p>
+                    <pre><code class="html">&lt;script&gt;</code><code class="javascript">   jQuery(document).ready(function(){
+                        jwplayer('playerBlock').setup({
+                        file: 'http://example.com/file.mp4',
+                        primary: "flash",
+                        width: '792',
+                        height: '480'
+                        });
+                        jQuery('#playerBlock').voicebase({
+                        playerId: 'playerBlock',
+                        playerType: 'jwplayer',
+                        mediaID: 'mediaId',
+                        apikey: 'ABCDEFGH-1234-ABCD-1234-1A2B3C4D5F6G',
+                        password: 'you_vb_password'
+                        });
+                        });</code><code class="html">&lt;/script&gt;</code>
+                    </pre>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="docs-section">
+                    <h2 id="youtube" class="">Youtube</h2>
+                    <p>
+                        <strong>Documentation:</strong>
+                        <a href="https://www.youtube.com/" target="_blank">https://www.youtube.com/</a>
+                    </p>
+                    <ol>
+                        <li>
+                            <p>For Youtube player your need include swf-object library and initiate player:</p>
+                            <pre><code class="html">&lt;script src=&quot;js/swfobject.js&quot;&gt;&lt;/script&gt;</code></pre>
+                    <pre><code class="html">&lt;script&gt;</code><code class="javascript">jQuery(document).ready(function(){
+                        var params = {allowScriptAccess: &quot;always&quot;, wmode: &quot;opaque&quot;};
+                        var atts = {id: &quot;ytplayer&quot;};
+                        swfobject.embedSWF(&quot;http://www.youtube.com/v/lrXIQQ8PeRs?enablejsapi=1&amp;controls=0&amp;showinfo=0&amp;playerapiid=ytplayer&quot;,
+                        &quot;ytapiplayer&quot;, &quot;840&quot;, &quot;356&quot;, &quot;8&quot;, null, null, params, atts);
+
+                        jQuery(&#39;#ytapiplayer&#39;).voicebase({
+                        playerId: &#39;ytplayer&#39;,
+                        playerType: &#39;youtube&#39;,
+                        mediaID: &#39;mediaId&#39;,
+                        apikey: &#39;ABCDEFGH-1234-ABCD-1234-1A2B3C4D5F6G&#39;,
+                        password: &#39;you_vb_password&#39;
+                        })
+                        });</code><code class="html">&lt;/script&gt;</code>
+                    </pre>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="docs-section">
+                    <h2 id="kaltura" class="">Kaltura</h2>
+                    <p>
+                        <strong>Documentation:</strong>
+                        <a href="http://corp.kaltura.com/" target="_blank">http://corp.kaltura.com/</a>
+                    </p>
+                    <p>For Kaltura player you can use Flash or Html5 players</p>
+                    <ol>
+                        <li>
+                            <p>Flash player</p>
+                            <div>Insert the block for player initialization</div>
+                            <pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+                                &lt;div id=&quot;{KALTURA_ID}&quot; style=&quot;width: {WIDTH}px; height: {HEIGHT}px;&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;</code></pre>
+                            <div>Initialize Kaltura</div>
+                            <div class="scroll_box">
+                                <pre><code class="html">&lt;script src=&quot;http://cdnapi.kaltura.com/p/{PARTNER_ID}/sp/{PARTNER_ID}00/embedIframeJs/uiconf_id/{UICONF_ID}/partner_id/{PARTNER_ID}?entry_id={ENTRY_ID}&playerId={KALTURA_ID}&cache_st=1362074486&autoembed=true&width=400&height=333&flashvars[streamerType]=rtmp&flashvars[mediaProtocol]=rtmp&flashvars[externalInterfaceDisabled]=0&quot;&gt; &lt;/script&gt;</code></pre>
+                            </div>
+
+                            <p>Initiate plugin</p>
+<pre><code class="html">&lt;script&gt;</code><code class="javascript">    jQuery(document).ready(function(){
+    jQuery('#app').voicebase({
+    playerId: 'KALTURA_ID',
+    playerType: 'kaltura',
+    mediaID: 'mediaId',
+    apikey: 'ABCDEFGH-1234-ABCD-1234-1A2B3C4D5F6G',
+    password: 'you_vb_password'
+    });
+    });
+</code><code class="html">&lt;/script&gt;</code></pre>
+                        </li>
+
+                        <li>
+                            <p>HTML5 player</p>
+                            <div>Insert the block for player initialization</div>
+                            <pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+                                &lt;div id=&quot;{KALTURA_ID}&quot; style=&quot;width: {WIDTH}px; height: {HEIGHT}px;&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;</code></pre>
+                            <div>Include Kaltura library</div>
+                            <div class="scroll_box">
+                                <pre><code class="html">&lt;script src=&quot;http://html5video.org/kaltura-player/mwEmbedLoader.php&quot;&gt; &lt;/script&gt;</code></pre>
+                            </div>
+                            <div>Initiate player and plugin</div>
+<pre><code class="html">&lt;script&gt;</code><code class="javascript">    jQuery(document).ready(function(){
+    mw.setConfig( 'KalturaSupport.LeadWithHTML5', true );      
+
+    kWidget.embed({
+             targetId: '{UNIQUE_OBJ_ID}',
+             wid: '_{PARTNER_ID}',
+             uiconf_id: '{UICONF_ID}',
+             entry_id: '{ENTRY_ID}',
+             flashvars :{
+                  'externalInterfaceDisabled' : false
+             },
+             readyCallback: function( playerId ){
+                  window.kdpReady();
+             }
+     });
+
+    jQuery('#app').voicebase({
+    playerId: 'KALTURA_ID',
+    playerType: 'kaltura',
+    mediaID: 'mediaId',
+    apikey: 'ABCDEFGH-1234-ABCD-1234-1A2B3C4D5F6G',
+    password: 'you_vb_password'
+    });
+    });
+</code><code class="html">&lt;/script&gt;</code></pre>
+
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="docs-section">
+                    <h2 id="flowplayer" class="">Flowplayer</h2>
+                    <p>
+                        <strong>Documentation:</strong>
+                        <a href="https://flowplayer.org/" target="_blank">https://flowplayer.org/</a>
+                    </p>
+
+                    <ol>
+                        <li>
+                            <p>Initialize flowplayer library</p>
+                            <div class="scroll_box">
+                                <pre><code class="html">&lt;script src=&quot;http://releases.flowplayer.org/5.4.6/flowplayer.min.js&quot;&gt; &lt;/script&gt;</code></pre>
+                            </div>
+                        </li>
+                        <li>
+                            <div>Insert the block for player initialization</div>
+                            <pre><code class="html">&lt;div id=&quot;{PLAYER_ID}&quot; style=&quot;width: {WIDTH}px; height: {HEIGHT}px;&quot; data-engine=&quot;flash or html5&quot;&gt;&lt;/div&gt;</code></pre>
+                        </li>
+                        <li>
+                            <p>Initiate player plugin</p>
+<pre><code class="html">&lt;script&gt;</code><code class="javascript">    jQuery(document).ready(function(){
+    $("#{PLAYER_ID}").flowplayer({
+    playlist: [
+    [
+    { mp4: "{{ MP4_URL }}" }
+    ]
+    ]
+    });
+
+    jQuery('#{PLAYER_ID}').voicebase({
+    playerId: '{PLAYER_ID}',
+    playerType: 'flowplayer',
+    mediaID: 'mediaId',
+    apikey: 'ABCDEFGH-1234-ABCD-1234-1A2B3C4D5F6G',
+    password: 'you_vb_password'
+    });
+    });
+</code><code class="html">&lt;/script&gt;</code></pre>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="docs-section">
+                    <h2 id="sublimevideo" class="">SublimeVideo player</h2>
+                    <p>
+                        <strong>Documentation:</strong>
+                        <a href="http://www.sublimevideo.net/" target="_blank">http://www.sublimevideo.net/</a>
+                    </p>
+
+                    <ol>
+                        <li>
+                            <p>You should add a site to your account on a http://www.sublimevideo.net/</p>
+                        </li>
+                        <li>
+                            <p>After registrated on a site on www.sublimevideo.net you get a token for a site (for example: abcde1fg)</p>
+                        </li>
+                        <li>
+                            <p>Initialize sublime video library</p>
+                            <div class="scroll_box">
+                                <pre><code class="html">&lt;script src=&quot;http://cdn.sublimevideo.net/js/{{ SITE_TOKEN }}.js&quot;&gt; &lt;/script&gt;</code></pre>
+                            </div>
+                        </li>
+                        <li>
+                            <p>You can publish video on your sublime account and get code of player. This code must be wrapped by &lt;div id=&quot;{{ PLUGIN_ID }}&quot;&gt;&lt;/div&gt;</p>
+                        </li>
+                        <li>
+                            <p>Insert the block for player initialization</p>
+                            <div class="scroll_box">
+                        <pre><code class="html">&lt;div id=&quot;{{ PLUGIN_ID }}&quot;&gt;
+                            &lt;video id=&quot;{{ PLAYER_ID }}&quot; class=&quot;sublime&quot; width=&quot;{{ WIDTH }}&quot; height=&quot;HEIGHT&quot; data-uid=&quot;{{ DATA_UID }}&quot; preload=&quot;none&quot;&gt;
+                            &lt;source src=&quot;{{ MP4_URL }}&quot;&gt;
+                            &lt;/video&gt;
+                            &lt;/div&gt;</code></pre>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Initiate player plugin</p>
+<pre><code class="html">&lt;script&gt;</code><code class="javascript">    jQuery(document).ready(function(){
+    jQuery('#{{ PLUGIN_ID }}').voicebase({
+    playerId: '{{ PLAYER_ID }}',
+    playerType: 'sublime',
+    mediaID: 'mediaId',
+    apikey: 'ABCDEFGH-1234-ABCD-1234-1A2B3C4D5F6G',
+    password: 'you_vb_password'
+    });
+    });
+</code><code class="html">&lt;/script&gt;</code></pre>
+                        </li>
+
+                    </ol>
+                </div>
+
+                <div class="docs-section">
+                    <h2 id="videojs" class="">Video.js</h2>
+                    <p>
+                        <strong>Documentation:</strong>
+                        <a href="http://www.videojs.com/" target="_blank">http://www.videojs.com/</a>
+                    </p>
+
+                    <ol>
+                        <li>
+                            <p>Include the Video.js Javascript and CSS files in the head of your page</p>
+                            <div class="scroll_box">
+                                <pre><code class="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;http://vjs.zencdn.net/4.8/video-js.css&quot;&gt;</code></pre>
+                                <pre><code class="html">&lt;script src=&quot;http://vjs.zencdn.net/4.8/video.js&quot;&gt; &lt;/script&gt;</code></pre>
+                            </div>
+                        </li>
+                        <li>
+                            <div>Add an HTML5 video tag to your page</div>
+                            <div class="scroll_box">
+                        <pre><code class="html">&lt;video id=&quot;{{ PLUGIN_ID }}&quot; class=&quot;video-js vjs-default-skin vjs-big-play-centered&quot; controls preload=&quot;auto&quot; width=&quot;{{ WIDTH }}&quot; height=&quot;HEIGHT&quot; data-setup=&quot;&quot;&gt;
+                            &lt;source src=&quot;{{ MP4_URL }}&quot;&gt;
+                            &lt;p class=&quot;vjs-no-js&quot;&gt;
+                            To view this video please enable JavaScript, and consider upgrading to a web browser that
+                            &lt;a href=&quot;http://videojs.com/html5-video-support/&quot; target=&quot;_blank&quot;>supports HTML5 video&lt;/a&gt;
+                            &lt;/p>
+                            &lt;/video&gt;</code></pre>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Initiate player plugin</p>
+<pre><code class="html">&lt;script&gt;</code><code class="javascript">    jQuery(document).ready(function(){
+    jQuery('#{{ PLUGIN_ID }}').voicebase({
+    playerId: '{{ PLAYER_ID }}',
+    playerType: 'video_js',
+    mediaID: 'mediaId',
+    apikey: 'ABCDEFGH-1234-ABCD-1234-1A2B3C4D5F6G',
+    password: 'you_vb_password'
+    });
+    });
+</code><code class="html">&lt;/script&gt;</code></pre>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="docs-section" id="example">
+                    <h2>Example:</h2>
+                    <img src="img/img-5.png" alt="" />
+                    <p>
+                        Voicebase plugin is responsive. That means plugin is scaled to the width of the container element. Minimum recommended width of the container is 380px.
+                    </p>
+                </div>
+
+
+            </div>
+
+            <!--Affix right-side menu-->
+            <div class="col-md-2" role="complementary" id="myScrollspy">
+                <ul class="nav nav-pills nav-stacked" id="affix_menu" data-spy="affix" >
+
+                    <li>
+                        <a href="#jwplayer">JW Player</a>
+                    </li>
+                    <li><a href="#youtube">YouTube</a></li>
+                    <li>
+                        <a href="#kaltura">Kaltura</a>
+                    </li>
+                    <li>
+                        <a href="#flowplayer">Flowplayer</a>
+                    </li>
+                    <li>
+                        <a href="#sublimevideo">SublimeVideo</a>
+                    </li>
+                    <li>
+                        <a href="#videojs">Video.js</a>
+                    </li>
+                    <li>
+                        <a href="#example">Example</a>
+                    </li>
+                </ul>
+                <p id="back-top">
+                    <a href="#top"><span></span>Back to Top</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/readme.js"></script>
+
+</body>
+</html>

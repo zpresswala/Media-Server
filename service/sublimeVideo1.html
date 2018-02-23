@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VoiceBase SublimeVideo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="css/jwplayer.vb-sdk-plugin.css"/>
+    <script type="text/javascript" src="js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.voicebase.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.zclip.js"></script>
+
+    <script type="text/javascript" src="http://cdn.sublimevideo.net/js/uf5akh9e.js"></script>
+
+    <style type="text/css">
+        .content {
+            width: 840px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div id="app">
+        <video id="player" class="sublime" width="840" height="480" data-uid="6f93f361" preload="none">
+            <source src="http://drive.flowplayer.org/193178/26482-dual.mp4" />
+        </video>
+    </div>
+
+    <script type='text/javascript'>
+        jQuery(document).ready(function(){
+            jQuery('#app').voicebase({
+                playerId: 'player',
+                playerType: 'sublime',
+                mediaID: '546d91745d48d',
+                example: true
+            });
+        });
+    </script>
+</div>
+
+</body>
+</html>

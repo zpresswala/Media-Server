@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VoiceBase JWPlayer - Video</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/jwplayer.vb-sdk-plugin.min.css"/>
+
+        <script type="text/javascript" src="js/lib/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.voicebase.min.js"></script>
+        <script type="text/javascript" src="js/lib/jquery.zclip.js"></script>
+        <!-- latest JWPlayer -->
+        <script type="text/javascript" src="http://jwpsrv.com/library/qhNfTJFiEeK7LSIACpYGxA.js"></script>
+        <!-- addThis -->
+        <script type="text/javascript">
+            var addthis_share = {	
+                url_transforms: { clean: true, shorten: { twitter: "bitly"} }, 
+                shorteners: {bitly : { login: "o_42tdbjpneq",apiKey: "R_d1386d2c09a79db3d2e0fb582a13ee09"} } 
+            };
+            var addthis_config = addthis_config||{};
+                addthis_config.data_track_addressbar = false;
+                addthis_config.data_track_clickback = false;
+        </script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f4b85003340f31d"></script>
+        <style type="text/css">
+            .content {
+                width: 840px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <div id="jwplayer"></div>
+        </div>
+        <script type='text/javascript'>
+            jwplayer('jwplayer').setup({
+                primary: "html5",
+                width: '100%',
+                height: '480',
+                playlist: "playlist/rss_example_external_ids.rss",
+//                    /* other way to include playlist */
+//                    playlist: [{
+//                        image: 'http://vod.uwinnipeg.ca/code/images/vidimage.png',
+//                        sources: [{
+//                            file: 'http://uwinnipegcdn.daemondefense.com/bio_hum_con/06-bio_hum_con-sep15.mp4'
+//                        }],
+//                        vbs_mediaid: '5423ae49311c2'
+//                    }],
+                listbar: { position: 'right', size: 222, layout: "basic"}
+            });
+            jQuery(document).ready(function(){
+                jQuery('#jwplayer').voicebase({
+                    playerId: 'jwplayer',
+                    playerType: 'jwplayer',
+                    example: true,
+                    lineBreak: '1.0',
+                    tabView: true,
+                    stream: 'http',
+                    showCommentsBlock: false
+                });
+            });
+
+        </script>
+
+    </body>
+</html>
+
+

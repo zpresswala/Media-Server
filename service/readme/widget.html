@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>VoiceBase Player Plugin Documentation</title>
+    <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/styles_bootstrap.css"/>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/googlecode.min.css">
+
+</head>
+<body data-spy="scroll" data-target="#myScrollspy">
+    <header id="top" class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="http://www.voicebase.com/" class="logo" target="_blank"></a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <!--<li>-->
+                        <!--<a href="index.html">Get Started</a>-->
+                    <!--</li>-->
+                    <li>
+                        <a href="players.html">Players</a>
+                    </li>
+                    <li>
+                        <a href="params.html">Parameters</a>
+                    </li>
+                    <li>
+                        <a href="methods.html">Methods</a>
+                    </li>
+                    <li>
+                        <a href="webhooks.html">WebHooks</a>
+                    </li>
+                    <li>
+                        <a href="buttons.html">Buttons</a>
+                    </li>
+                    <li class="active">
+                        <a href="widget.html">Search Widget</a>
+                    </li>
+                    <li>
+                        <a href="vb-api-devguide-07162014.pdf">API Doc</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10" role="main">
+                <div id="main" class="docs-section">
+                    <h2>Main parameters</h2>
+                    <div class="parameter-section">
+                        <table class="table table-striped params">
+                            <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Req</th>
+                                <th>Descriptions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>apiURL</td>
+                                <td>string</td>
+                                <td></td>
+                                <td>
+                                    <p>The api base url</p>
+                                    <p><strong>Default:</strong> https://www.voicebase.com/services</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">apiURL: 'https://beta.voicebase.com/services'</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>apiKey</td>
+                                <td>string</td>
+                                <td class="req"></td>
+                                <td>
+                                    <p>your voicebase api key</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">apiKey: 'ABCDEFGH-1234-ABCD-1234-1A2B3C4D5F6G'</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>password</td>
+                                <td>string</td>
+                                <td class="req"></td>
+                                <td>
+                                    <p>your voicebase api password</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">password: 'you_vb_password'</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>token</td>
+                                <td>string</td>
+                                <td></td>
+                                <td>
+                                    <p>is indicated instead of apikey and password</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">token: 'db250aaf...e581a'</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>example</td>
+                                <td>string</td>
+                                <td></td>
+                                <td>
+                                    <p>Used only in VoiceBase example files</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">example: true</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>width</td>
+                                <td>integer</td>
+                                <td></td>
+                                <td>
+                                    <p>Custom width for widget block</p>
+                                    <p><strong>Default:</strong> 640</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">width: 300</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>result_block_id</td>
+                                <td>string</td>
+                                <td></td>
+                                <td>
+                                    <p>ID of the alternative block for showing results</p>
+                                    <p><strong>Default:</strong> searchresultblock</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">result_block_id: 'customId'</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!--Affix right-side menu-->
+            <div class="col-md-2" role="complementary" id="myScrollspy">
+                <ul class="nav nav-pills nav-stacked" id="affix_menu" data-spy="affix" >
+                    <li>
+                        <a href="#main">Main </a>
+                    </li>
+                </ul>
+                <p id="back-top">
+                    <a href="#top"><span></span>Back to Top</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/readme.js"></script>
+
+</body>
+</html>

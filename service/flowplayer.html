@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VoiceBase FlowPlayer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="http://releases.flowplayer.org/5.4.6/skin/minimalist.css">
+    <link rel="stylesheet" href="css/jwplayer.vb-sdk-plugin.css"/>
+    <script type="text/javascript" src="js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.voicebase.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.zclip.js"></script>
+    <script src="http://releases.flowplayer.org/5.4.6/flowplayer.js"></script>
+
+    <style type="text/css">
+        .content {
+            width: 840px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div id="player" style="width: 100%;" data-engine="html5"></div>
+    <script type='text/javascript'>
+        $("#player").flowplayer({
+            playlist: [
+                [
+                    { mp4: "http://drive.flowplayer.org/193178/26482-dual.mp4" }
+                ]
+            ]
+        });
+
+        jQuery(document).ready(function(){
+            jQuery('#player').voicebase({
+                playerId: 'player',
+                playerType: 'flowplayer',
+                mediaID: '546d91745d48d',
+                example: true
+            });
+        });
+    </script>
+</div>
+
+</body>
+</html>
+
+

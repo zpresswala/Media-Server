@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>VoiceBase Player Plugin Documentation</title>
+    <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/styles_bootstrap.css"/>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/googlecode.min.css">
+
+</head>
+<body data-spy="scroll" data-target="#myScrollspy">
+    <header id="top" class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="http://www.voicebase.com/" class="logo" target="_blank"></a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <!--<li>-->
+                        <!--<a href="index.html">Get Started</a>-->
+                    <!--</li>-->
+                    <li>
+                        <a href="players.html">Players</a>
+                    </li>
+                    <li>
+                        <a href="params.html">Parameters</a>
+                    </li>
+                    <li class="active">
+                        <a href="methods.html">Methods</a>
+                    </li>
+                    <li>
+                        <a href="webhooks.html">WebHooks</a>
+                    </li>
+                    <li>
+                        <a href="buttons.html">Buttons</a>
+                    </li>
+                    <li>
+                        <a href="widget.html">Search Widget</a>
+                    </li>
+                    <li>
+                        <a href="vb-api-devguide-07162014.pdf">API Doc</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10" role="main">
+                <h2>Methods</h2>
+
+                <h3 id="init">init(options)</h3>
+                <div class="docs-method">
+                    <div class="docs-method-label"><strong>Description:</strong></div>
+                    <div>
+                        Initialize plugin with parameters. This method is analogue of more simple $('#id').voicebase(options)
+                    </div>
+                    <div class="docs-method-label"><strong>Parameters:</strong></div>
+                    <div>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>options</td>
+                                    <td>JSON Object</td>
+                                    <td>Object with plugin configuration. You can see list of parameters <a href="params.html">here</a> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div><strong>Example:</strong></div>
+                    <div>
+<pre><code class="javascript">
+jQuery(&#39;#player&#39;).voicebase('init', {
+    playerId: 'playerBlock',
+    playerType: 'jwplayer',
+    mediaID: 'mediaId',
+    apikey: 'ABCDEFGH-1234-ABCD-1234-1A2B3C4D5F6G',
+    password: 'you_vb_password'
+});
+</code></pre>
+                    </div>
+                </div>
+
+                <h3 id="ready">ready()</h3>
+                <div class="docs-method">
+                    <div class="docs-method-label"><strong>Description:</strong></div>
+                    <div>
+                        Ready callback of plugin.
+                    </div>
+                    <div class="docs-method-label"><strong>Returned value:</strong></div>
+                    <div><strong>Example:</strong></div>
+                    <div>
+<pre><code class="javascript">
+    jQuery(&#39;#player&#39;).voicebase('init', {
+    playerId: 'playerBlock',
+    playerType: 'jwplayer',
+    mediaID: 'mediaId',
+    apikey: 'ABCDEFGH-1234-ABCD-1234-1A2B3C4D5F6G',
+    password: 'you_vb_password',
+    ready: function(){
+        console.log('Voicebase is ready!');
+    }
+});
+</code></pre>
+                    </div>
+                </div>
+
+                <h3 id="getPosition">getPosition()</h3>
+                <div class="docs-method">
+                    <div class="docs-method-label"><strong>Description:</strong></div>
+                    <div>
+                        Getting current time position
+                    </div>
+                    <div class="docs-method-label"><strong>Returned value:</strong></div>
+                    <div>
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Integer</td>
+                                <td>Position of media in ms</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div><strong>Example:</strong></div>
+                    <div>
+<pre><code class="javascript">
+    var position = jQuery(&#39;#player&#39;).voicebase('getPosition');
+</code></pre>
+                    </div>
+                </div>
+
+                <h3 id="getSearchString">getSearchString()</h3>
+                <div class="docs-method">
+                    <div class="docs-method-label"><strong>Description:</strong></div>
+                    <div>
+                        Getting value of search bar
+                    </div>
+                    <div class="docs-method-label"><strong>Returned value:</strong></div>
+                    <div>
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>String</td>
+                                <td>search string</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div><strong>Example:</strong></div>
+                    <div>
+<pre><code class="javascript">
+    var position = jQuery(&#39;#player&#39;).voicebase('getSearchString');
+</code></pre>
+                    </div>
+                </div>
+
+                <h3 id="getSharePositionUrl">getSharePositionUrl()</h3>
+                <div class="docs-method">
+                    <div class="docs-method-label"><strong>Description:</strong></div>
+                    <div>
+                        Getting string with url with parameter vbt. Parameter 'vbt' is equal current position of media file in ms
+                    </div>
+                    <div class="docs-method-label"><strong>Returned value:</strong></div>
+                    <div>
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>String</td>
+                                <td>Url for sharing</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div><strong>Example:</strong></div>
+                    <div>
+<pre><code class="javascript">
+    var url = jQuery(&#39;#player&#39;).voicebase('getSharePositionUrl');
+    // returned: "http://some_site.com/?vbt=1819"
+</code></pre>
+                    </div>
+                </div>
+
+                <h3 id="getShareSearchStringUrl">getShareSearchStringUrl()</h3>
+                <div class="docs-method">
+                    <div class="docs-method-label"><strong>Description:</strong></div>
+                    <div>
+                        Getting string with url with parameter vbs. Parameter 'vbs' is equal current value of search string
+                    </div>
+                    <div class="docs-method-label"><strong>Returned value:</strong></div>
+                    <div>
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>String</td>
+                                <td>Url for sharing</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div><strong>Example:</strong></div>
+                    <div>
+<pre><code class="javascript">
+    var url = jQuery(&#39;#player&#39;).voicebase('getShareSearchStringUrl');
+    // returned: "http://some_site.com/?vbs=keyword"
+</code></pre>
+                    </div>
+                </div>
+
+                <h3 id="search">search(text)</h3>
+                <div class="docs-method">
+                    <div class="docs-method-label"><strong>Description:</strong></div>
+                    <div>
+                        Plugin will start searching text.
+                    </div>
+                    <div class="docs-method-label"><strong>Parameters:</strong></div>
+                    <div>
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>text</td>
+                                <td>String</td>
+                                <td>Text for searching</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div><strong>Example:</strong></div>
+                    <div>
+<pre><code class="javascript">
+    jQuery(&#39;#player&#39;).voicebase('search', 'some words');
+</code></pre>
+                    </div>
+                </div>
+
+                <h3 id="position">position(time)</h3>
+                <div class="docs-method">
+                    <div class="docs-method-label"><strong>Description:</strong></div>
+                    <div>
+                        Player rewind to time.
+                    </div>
+                    <div class="docs-method-label"><strong>Parameters:</strong></div>
+                    <div>
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>time</td>
+                                <td>integer</td>
+                                <td>Time in ms</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div><strong>Example:</strong></div>
+                    <div>
+<pre><code class="javascript">
+    jQuery(&#39;#player&#39;).voicebase('position', 100);
+</code></pre>
+                    </div>
+                </div>
+
+                <h3 id="destroy">destroy()</h3>
+                <div class="docs-method">
+                    <div class="docs-method-label"><strong>Description:</strong></div>
+                    <div>
+                        Destructor of plugin. It removes all html elements of plugin and all events.
+                    </div>
+                    <div><strong>Example:</strong></div>
+                    <div>
+<pre><code class="javascript">
+    jQuery(&#39;#player&#39;).voicebase('destroy');
+</code></pre>
+                    </div>
+                </div>
+
+                <h3 id="addCustomMarkers">addCustomMarkers()</h3>
+                <div class="docs-method">
+                    <div class="docs-method-label"><strong>Description:</strong></div>
+                    <div>
+                        Adding custom user markers on timeline of plugin.
+                    </div>
+                    <div class="docs-method-label"><strong>Parameters:</strong></div>
+                    <div>
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>markers</td>
+                                <td>Object {'time': 'name'}</td>
+                                <td>Object with markers</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div><strong>Example:</strong></div>
+                    <div>
+<pre><code class="javascript">
+    jQuery(&#39;#player&#39;).voicebase('addCustomMarkers', {
+        '5': 'marker1',
+        '25': 'marker2',
+        '50': 'marker3'
+    });
+</code></pre>
+                    </div>
+                </div>
+
+                <h3 id="showCustomMarkers">showCustomMarkers()</h3>
+                <div class="docs-method">
+                    <div class="docs-method-label"><strong>Description:</strong></div>
+                    <div>
+                        Showing custom user markers.
+                    </div>
+                    <div><strong>Example:</strong></div>
+                    <div>
+<pre><code class="javascript">
+    jQuery(&#39;#player&#39;).voicebase('showCustomMarkers');
+</code></pre>
+                    </div>
+                </div>
+
+                <h3 id="hideCustomMarkers">hideCustomMarkers()</h3>
+                <div class="docs-method">
+                    <div class="docs-method-label"><strong>Description:</strong></div>
+                    <div>
+                        Hiding custom user markers.
+                    </div>
+                    <div><strong>Example:</strong></div>
+                    <div>
+<pre><code class="javascript">
+    jQuery(&#39;#player&#39;).voicebase('hideCustomMarkers');
+</code></pre>
+                    </div>
+                </div>
+
+                <h3 id="nextCustomMarkers">nextCustomMarkers()</h3>
+                <div class="docs-method">
+                    <div class="docs-method-label"><strong>Description:</strong></div>
+                    <div>
+                        Player rewind to position of next custom marker.
+                    </div>
+                    <div><strong>Example:</strong></div>
+                    <div>
+<pre><code class="javascript">
+    jQuery(&#39;#player&#39;).voicebase('nextCustomMarkers');
+</code></pre>
+                    </div>
+                </div>
+
+                <h3 id="prevCustomMarkers">prevCustomMarkers()</h3>
+                <div class="docs-method">
+                    <div class="docs-method-label"><strong>Description:</strong></div>
+                    <div>
+                        Player rewind to position of previous custom marker.
+                    </div>
+                    <div><strong>Example:</strong></div>
+                    <div>
+<pre><code class="javascript">
+    jQuery(&#39;#player&#39;).voicebase('prevCustomMarkers');
+</code></pre>
+                    </div>
+                </div>
+
+                <h3 id="addHighlightTranscript">addHighlightTranscript()</h3>
+                <div class="docs-method">
+                    <div class="docs-method-label"><strong>Description:</strong></div>
+                    <div>
+                        Add highlight snippets in transcription.
+                    </div>
+                    <div class="docs-method-label"><strong>Parameters:</strong></div>
+                    <div>
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>snippets</td>
+                                <td>Array of Objects [{'startTime': Integer, 'endTime': Integer, 'color': 'hex'}]</td>
+                                <td>Array with coordinates of snippets</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div><strong>Example:</strong></div>
+                    <div>
+<pre><code class="javascript">
+    jQuery(&#39;#player&#39;).voicebase('addHighlightTranscript', [{
+        startTime: 0,
+        endTime: 25,
+        color: '#F7B1BC'
+    }, {
+        startTime: 50,
+        endTime: 105,
+        color: '#979AF5'
+    }]);
+</code></pre>
+                    </div>
+                </div>
+
+                <h3 id="showHighlightTranscript">showHighlightTranscript()</h3>
+                <div class="docs-method">
+                    <div class="docs-method-label"><strong>Description:</strong></div>
+                    <div>
+                        Showing highlight snippets.
+                    </div>
+                    <div><strong>Example:</strong></div>
+                    <div>
+<pre><code class="javascript">
+    jQuery(&#39;#player&#39;).voicebase('showHighlightTranscript');
+</code></pre>
+                    </div>
+                </div>
+
+                <h3 id="hideHighlightTranscript">hideHighlightTranscript()</h3>
+                <div class="docs-method">
+                    <div class="docs-method-label"><strong>Description:</strong></div>
+                    <div>
+                        Hiding highlight snippets.
+                    </div>
+                    <div><strong>Example:</strong></div>
+                    <div>
+<pre><code class="javascript">
+    jQuery(&#39;#player&#39;).voicebase('hideHighlightTranscript');
+</code></pre>
+                    </div>
+                </div>
+
+                <h3 id="showAutoGeneratedKeywords">showAutoGeneratedKeywords()</h3>
+                <div class="docs-method">
+                    <div class="docs-method-label"><strong>Description:</strong></div>
+                    <div>
+                        Show auto generated keywords.
+                    </div>
+                    <div><strong>Example:</strong></div>
+                    <div>
+<pre><code class="javascript">
+    jQuery(&#39;#player&#39;).voicebase('showAutoGeneratedKeywords');
+</code></pre>
+                    </div>
+                </div>
+
+                <h3 id="hideAutoGeneratedKeywords">hideAutoGeneratedKeywords()</h3>
+                <div class="docs-method">
+                    <div class="docs-method-label"><strong>Description:</strong></div>
+                    <div>
+                        Hide auto generated keywords.
+                    </div>
+                    <div><strong>Example:</strong></div>
+                    <div>
+<pre><code class="javascript">
+    jQuery(&#39;#player&#39;).voicebase('hideAutoGeneratedKeywords');
+</code></pre>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--Affix right-side menu-->
+            <div class="col-md-2" role="complementary" id="myScrollspy">
+                <ul class="nav nav-pills nav-stacked" id="affix_menu" data-spy="affix" >
+                    <li>
+                        <a href="#init">init</a>
+                    </li>
+                    <li>
+                        <a href="#ready">ready</a>
+                    </li>
+                    <li>
+                        <a href="#getPosition">getPosition</a>
+                    </li>
+                    <li>
+                        <a href="#getSearchString">getSearchString</a>
+                    </li>
+                    <li>
+                        <a href="#getSharePositionUrl">getSharePositionUrl</a>
+                    </li>
+                    <li>
+                        <a href="#getShareSearchStringUrl">getShareSearchStringUrl</a>
+                    </li>
+                    <li>
+                        <a href="#search">search</a>
+                    </li>
+                    <li>
+                        <a href="#position">position</a>
+                    </li>
+                    <li>
+                        <a href="#destroy">destroy</a>
+                    </li>
+                    <li>
+                        <a href="#addCustomMarkers">addCustomMarkers</a>
+                    </li>
+                    <li>
+                        <a href="#showCustomMarkers">showCustomMarkers</a>
+                    </li>
+                    <li>
+                        <a href="#hideCustomMarkers">hideCustomMarkers</a>
+                    </li>
+                    <li>
+                        <a href="#nextCustomMarkers">nextCustomMarkers</a>
+                    </li>
+                    <li>
+                        <a href="#prevCustomMarkers">prevCustomMarkers</a>
+                    </li>
+                    <li>
+                        <a href="#addHighlightTranscript">addHighlightTranscript</a>
+                    </li>
+                    <li>
+                        <a href="#showHighlightTranscript">showHighlightTranscript</a>
+                    </li>
+                    <li>
+                        <a href="#hideHighlightTranscript">hideHighlightTranscript</a>
+                    </li>
+                    <li>
+                        <a href="#showAutoGeneratedKeywords">showAutoGeneratedKeywords</a>
+                    </li>
+                    <li>
+                        <a href="#hideAutoGeneratedKeywords">hideAutoGeneratedKeywords</a>
+                    </li>
+                </ul>
+                <p id="back-top">
+                    <a href="#top"><span></span>Back to Top</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/readme.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VoiceBase JWPlayer - Video</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jwplayer.vb-sdk-plugin.css"/>
+    <script type="text/javascript" src="js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.voicebase.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.zclip.js"></script>
+    <!-- latest JWPlayer -->
+    <script type="text/javascript" src="http://jwpsrv.com/library/qhNfTJFiEeK7LSIACpYGxA.js"></script>
+    <!-- addThis -->
+    <script type="text/javascript">
+        var addthis_share = {
+            url_transforms: { clean: true, shorten: { twitter: "bitly"} },
+            shorteners: {bitly : { login: "o_42tdbjpneq",apiKey: "R_d1386d2c09a79db3d2e0fb582a13ee09"} }
+        };
+        var addthis_config = addthis_config||{};
+        addthis_config.data_track_addressbar = false;
+        addthis_config.data_track_clickback = false;
+    </script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f4b85003340f31d"></script>
+    <style type="text/css">
+        .content {
+            margin: 0 10px;
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div id="jwplayer"></div>
+    <script type='text/javascript'>
+        jwplayer('jwplayer').setup({
+            playlist: [{
+                image: "https://s3.amazonaws.com/voiceimages_beta/4000/39000/38876_27410-thumb.jpg",
+                sources: [
+                    {file: "rtmp://s1x4f6knif1p0m.cloudfront.net/cfx/st/mp4:4000/39000/38876_5423ae49311c2_LjIkbrkkQnhqgUU?Expires=1415794259&Signature=ZUoRUhpHTXcntnTGU9vGNd7fZcueH4E~k-NMwvqzNLE4Q42EJXN1eFTdMDN4gX~eAOukdcxdolRt~88WNEkm6nuNxlgyWUVOV~5z1BsVuya0AUZ4hb2ZH3G-V40eNpB7YdKIBXWV8dXUdVHnQcSzQ-1rtNUpbzqf0YXKLQWKDav4o6hTn0-fzO2czYLgU3ioF7UrV31GWNhSZhHMG35uZfX5bIy7IQfKUHssLsPUxDAU1tyt7HNwpAmfadMqB6An22cSQU4igovCSL69TIkQ8mUuxOzwxAAnXhPsYmAk6VfxDnqLCcZNsklCn~Jp-gVAoKC~etQBbZX~qy8zDs9ldQ__&Key-Pair-Id=APKAJU5ELJNLFMM22LLA"},
+                    {file: "http://d3mwaq4ir96ox7.cloudfront.net/4000/39000/38876_5423ae49311c2_LjIkbrkkQnhqgUU.mp4?Expires=1415794259&Signature=bv9OaRLoI5OnkH~uyus5oibzY5uLBzDU7fBJEOF5ZQAUbVuvK9EBekFreU6L2kLgZCCvhyPbBJMNXADdcgyn7JIC4jAlWTiDNxQ7jter9Fa3mScrIFv-IhJO~kTuzORTdZxRtZDYnGCxpccTlJ5rcHilG4XYvHE6bEJpCL8--8yfUShC7H0q0uzliv15k2CvDgEyJjfs3-XjzvPfOYZbplFbW5jgKc9FgUJkRrPBxgGYj95BF62ylP7PWA5xe3FY-KnekkIngnzy00fwEWlgIEdx4ZFrDl9wfN9HyssbYFRIdva5FWihzOKExZT3sZymTFUBmSdbVHxC7ohIR5O-ZQ__&Key-Pair-Id=APKAJU5ELJNLFMM22LLA"}
+                ]
+            }],
+
+            primary: "html5", // rtmp streaming is working only in flash
+            width: '100%',
+            height: '480'
+        });
+        jQuery(document).ready(function(){
+            jQuery('#jwplayer').voicebase({
+                playerId: 'jwplayer',
+                playerType: 'jwplayer',
+                mediaID: '546d91745d48d',
+                example: true,
+                lineBreak: '1.0',
+                stream: 'http',
+                actionFlag: {
+                    edit: true
+                }
+
+            });
+        });
+    </script>
+</div>
+
+</body>
+</html>
+
+

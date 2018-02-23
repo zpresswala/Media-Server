@@ -1,0 +1,41 @@
+.vbs-content *,
+.vbs-media-block *,
+.vbs-transcript-block *,
+.vbs-keywords-block *,
+.vbs-comments-block *,
+.vbs-search-form *,
+.vbs-controls *,
+.vbs-news-block,
+#vbs-reader-wrap,
+#vbs-edit-wrap,
+.vbs-popup {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+
+  ul,
+  ol {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.vbs-content,
+.vbs-media-block,
+.vbs-transcript-block,
+.vbs-keywords-block,
+.vbs-comments-block,
+.vbs-search-form,
+.vbs-controls,
+#vbs-reader-wrap,
+#vbs-edit-wrap,
+.vbs-news-block,
+.vbs-tooltip,
+.vbs-popup {
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+}

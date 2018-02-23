@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>VoiceBase Player Plugin Documentation</title>
+    <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/styles_bootstrap.css"/>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/googlecode.min.css">
+
+</head>
+<body data-spy="scroll" data-target="#myScrollspy">
+    <header id="top" class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="http://www.voicebase.com/" class="logo" target="_blank"></a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <!--<li>-->
+                        <!--<a href="index.html">Get Started</a>-->
+                    <!--</li>-->
+                    <li>
+                        <a href="players.html">Players</a>
+                    </li>
+                    <li class="active">
+                        <a href="params.html">Parameters</a>
+                    </li>
+                    <li>
+                        <a href="methods.html">Methods</a>
+                    </li>
+                    <li>
+                        <a href="webhooks.html">WebHooks</a>
+                    </li>
+                    <li>
+                        <a href="buttons.html">Buttons</a>
+                    </li>
+                    <li>
+                        <a href="widget.html">Search Widget</a>
+                    </li>
+                    <li>
+                        <a href="vb-api-devguide-07162014.pdf">API Doc</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10" role="main">
+                <div id="main" class="docs-section">
+                    <h2>Main parameters</h2>
+                    <div class="parameter-section">
+                        <table class="table table-striped params">
+                            <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Req</th>
+                                <th>Descriptions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>apiURL</td>
+                                <td>string</td>
+                                <td></td>
+                                <td>
+                                    <p>The api base url</p>
+                                    <p><strong>Default:</strong> https://www.voicebase.com/services</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">apiURL: 'https://beta.voicebase.com/services'</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>apiVersion</td>
+                                <td>float</td>
+                                <td></td>
+                                <td>
+                                    <p>The api version</p>
+                                    <p><strong>Default:</strong> 1.1</p>
+                                    <div><strong>Example:</strong>
+                                        <pre><code class="javascript">apiVersion: 1.1</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>apiKey</td>
+                                <td>string</td>
+                                <td class="req"></td>
+                                <td>
+                                    <p>your voicebase api key</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">apiKey: 'ABCDEFGH-1234-ABCD-1234-1A2B3C4D5F6G'</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>password</td>
+                                <td>string</td>
+                                <td class="req"></td>
+                                <td>
+                                    <p>your voicebase api password</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">password: 'you_vb_password'</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>token</td>
+                                <td>string</td>
+                                <td></td>
+                                <td>
+                                    <p>is indicated instead of apikey and password</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">token: 'db250aaf...e581a'</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>tokenTimeOut</td>
+                                <td>integer</td>
+                                <td></td>
+                                <td>
+                                    <p>Live Timeout for token</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">tokenTimeOut: 15</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>mediaID</td>
+                                <td>string</td>
+                                <td class="req"></td>
+                                <td>
+                                    <p>mediafile id</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">mediaID: 'ABCD1234DCBA'</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>externalId</td>
+                                <td>string</td>
+                                <td></td>
+                                <td>
+                                    <p>is indicated instead of MediaID</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">externalId: 'my-media-file'</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>playerType</td>
+                                <td>string</td>
+                                <td class="req"></td>
+                                <td>
+                                    <p>Player type. Supported players list <a href="index.html">here</a></p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">playerType: 'jwplayer'</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>playerId</td>
+                                <td>string</td>
+                                <td class="req"></td>
+                                <td>
+                                    <p>Player ID</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">playerId: 'playerBlock'</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="additional" class="docs-section">
+                    <h2>Additional parameters</h2>
+                    <div class="parameter-section">
+                        <table class="table table-striped params">
+                            <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Descriptions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>mediumResponsiveWithSpeakers</td>
+                                <td>int</td>
+                                <td>
+                                    <p>Width for adding responsive class if Speakers are defined</p>
+                                    <p><strong>Default:</strong> 600</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">mediumResponsiveWithSpeakers: 580</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>mediumResponsive</td>
+                                <td>int</td>
+                                <td>
+                                    <p>Width for adding responsive class</p>
+                                    <p><strong>Default:</strong> 450</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">mediumResponsive: 480</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>minResponsive</td>
+                                <td>int</td>
+                                <td>
+                                    <p>Width for adding responsive small class</p>
+                                    <p><strong>Default:</strong> 400</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">minResponsive: 580</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>showMore</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Add Show More button for transcript and keywords sections</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">showMore: true</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>animation</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Show animation spinner in timeline when loading or waiting for response</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">animation: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>contextMenu</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Show context menu for copying and sharing URL of keyword or position</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">contextMenu: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>actionflag</td>
+                                <td>object</td>
+                                <td>
+                                    <p>Interception of default events of buttons</p>
+                                    <p>See list of webhooks <a href="buttons.html">here</a></p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">actionflag: {
+    remove: false,
+    comment: false
+}</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>webHooks</td>
+                                <td>mixed</td>
+                                <td>
+                                    <p>Interception of default events of buttons</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <p>See list of webhooks <a href="webhooks.html">here</a></p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">webHooks: {
+    socialShare: function(){
+        myCustomJSfunction();
+    }
+}</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>trackEvents</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Allows to trace Play, Pause, Seek events, click on keywords and transcript text, and gather GA statistics</p>
+                                    <p><strong>Require</strong> Google Analytics</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">trackEvents: true</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>stream</td>
+                                <td>mixed</td>
+                                <td>
+                                    <p>to use the streaming for media-file (<b>http</b> (html5) | <b>rtmp</b> (flash) | <b>true</b> (html5, http))</p>
+                                    <p><strong>Only in JW Player</strong></p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">stream: "rtmp"</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>example</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Used only in VoiceBase example files</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">example: true</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>exampleTokenUrl</td>
+                                <td>string</td>
+                                <td>
+                                    <p>Used only in VoiceBase example files</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">exampleTokenUrl: "http://exmaple.com/exampleToken"</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>toggleBlocks</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>If false, then keywords, media, transcript and comments blocks are always opened and can't be collapsed</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">toggleBlocks: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>searchBarBlock</td>
+                                <td>string</td>
+                                <td>
+                                    <p>ID of the alternative block for showing the search bar</p>
+                                    <p><strong>Default:</strong> 'vbs-searchbar-block'</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">searchBarBlock: 'id-block'</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>searchBarBlockWidth</td>
+                                <td>integer or false</td>
+                                <td>
+                                    <p>Custom width for search bar block</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">searchBarBlockWidth: 58</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>searchBarOuter</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Move search bar out of keyword section</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">searchBarOuter: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>tabView</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Keyword, transcript and comments sections are finding in tabs</p>
+                                    <p>If tabView is equal true, then parameters </p>
+                                    <ul>
+                                        <li>searchBarOuter</li>
+                                        <li>keywordsBlock</li>
+                                        <li>keywordsHeight</li>
+                                        <li>keywordsWidth</li>
+                                        <li>transcriptBlock</li>
+                                        <li>transcriptHeight</li>
+                                        <li>transcriptWidth</li>
+                                        <li>commentsBlock</li>
+                                        <li>commentsWidth</li>
+                                    </ul>
+                                    <p>will have default values</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">tabView: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>debug</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>If debug is equal true, then after entering ctrl+alt+g, logs will go to the console of browser, loggly.com and screen</p>
+                                    Information of logs: browser info, stream, mediaId, mode (flash or http), status of comments, transcripts, keywords, metadata; url of stream, url of site and player type
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">debug: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>mediaTypeOverride</td>
+                                <td>string</td>
+                                <td>
+                                    <p>Can be: 'video' or 'aduio'</p>
+                                    <p>This parameter override type of media file coming from metadata.</p>
+                                    <p>Need when users index audio but stream video via remote streams or their own streaming server.
+                                    </p>
+                                    <p><strong>Default:</strong> null</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">mediaTypeOverride: 'video'</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>localApp</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>This parameter means that this is a local application without requests to server.</p>
+                                    <p>
+                                        Transcript and keywords are created from YouTube subtitles.
+                                    </p>
+                                    <p>
+                                        This work is only for YouTube player.
+                                    </p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">localApp: true</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>markersInNativeTimeline</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>
+                                        Keywords, markers are shown in native timeline of kaltura
+                                    </p>
+                                    <p>
+                                        This is work only for kaltura player.
+                                    </p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">markersInNativeTimeline: true</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>modalErrors</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>
+                                        Error messages are shown in modal popups or inline in interface
+                                    </p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">modalErrors: true</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>modalSave</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>
+                                        Messages of saving transcript are shown in modal popups or inline in interface
+                                    </p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">modalSave: true</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="share" class="docs-section">
+                    <h2>Share parameters</h2>
+                    <div class="parameter-section">
+                        <table class="table table-striped params">
+                            <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Descriptions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>shareUrl</td>
+                                <td>string</td>
+                                <td>
+                                    <p>Custom url for sharing without parameters</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">shareUrl: "http://some_url.com/"</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>shareParams</td>
+                                <td>object</td>
+                                <td>
+                                    <p>Custom parameters that will be added to URL with Sharing</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">shareParams: {"param1": "value1"; "param2": 12}</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>shareTitle</td>
+                                <td>string</td>
+                                <td>
+                                    <p>Title shown in Share dialog</p>
+                                    <p><strong>Default:</strong> "Checkout this!"</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">shareTitle: "Follow me!"</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>addThisButtons</td>
+                                <td>array</td>
+                                <td>
+                                    <p>Enumeration of addThis buttons in Share dialog</p>
+                                    <p><strong>Default:</strong> ['gmail', 'facebook', 'twitter', 'google_plusone_share', 'compact']</p>
+                                    <p>See more buttons in <a href="https://www.addthis.com/get/sharing" target="_blank">addThis site</a></p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">addThisButtons: ['facebook', 'compact']</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>voicebaseShare</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Add button "Share with E-mail" in Share Dialog</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">voicebaseShare: true</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>zeroclipboard</td>
+                                <td>string</td>
+                                <td>
+                                    <p>Path to swf file of zeroClipboard plugin for Copy URL to Clipboard</p>
+                                    <p><strong>Default:</strong> "ZeroClipboard.swf"</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">zeroclipboard: "http://ex.co/zc.swf"
+...
+zeroclipboard: "/ZeroClipboard.swf"
+                                        </code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="media" class="docs-section">
+                    <h2>Media Block parameters</h2>
+                    <div class="parameter-section">
+                        <table class="table table-striped params">
+                            <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Descriptions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>mediaBlock</td>
+                                <td>string</td>
+                                <td>
+                                    <p>ID of the alternative block for showing the media (player) header</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">mediaBlock: "customMedia"</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>mediaWidth</td>
+                                <td>integer</td>
+                                <td>
+                                    <p>Custom width for media block</p>
+                                    <p><strong>Default:</strong> player or content width</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">mediaWidth: 580</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>controlsBlock</td>
+                                <td>string</td>
+                                <td>
+                                    <p>ID of the alternative block for showing the controls and timeline block</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">controlsBlock: "controlsDiv"</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>controlsWidth</td>
+                                <td>integer</td>
+                                <td>
+                                    <p>Custom width for controls block</p>
+                                    <p><strong>Default:</strong> player or content width</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">controlsWidth: 580</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>toggleMediaBlock</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>If false, then media block is always opened and can't be collapsed</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">toggleMediaBlock: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>hasMediaBlockHeader</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Show or hide media block</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">hasMediaBlockHeader: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>showControlsBlock</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Show or hide controls block</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">showControlsBlock: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>expandMediaBlock</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Expand media block by default</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">expandMediaBlock: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="keywords" class="docs-section">
+                    <h2>Keywords Block parameters</h2>
+                    <div class="parameter-section">
+                        <table class="table table-striped params">
+                            <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Descriptions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>keywordsBlock</td>
+                                <td>string</td>
+                                <td>
+                                    <p>ID of the alternative block for showing the keywords block</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">keywordsBlock: "keywordsId"</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>keywordsHeight</td>
+                                <td>integer</td>
+                                <td>
+                                    <p>Custom height for keywords block</p>
+                                    <p><strong>Default:</strong> 170</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">keywordsHeight: 250</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>keywordsWidth</td>
+                                <td>integer</td>
+                                <td>
+                                    <p>Custom width for keywords block</p>
+                                    <p><strong>Default:</strong> player or content width</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">keywordsWidth: 580</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>keywordsResizable</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Turning on the possibility to change the keywords block size</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <p><strong>Require</strong> jQuery UI</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">keywordsResizable: true</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>keywordsColumns</td>
+                                <td>mixed</td>
+                                <td>
+                                    <p>Sets the amount of columns of keywords: 1, 2, 3, 4, 5, auto, topics</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">keywordsColumns: "topics"</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>editKeywords</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Allows edition of keywords and topics (moving, addition, deletion)</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">editKeywords: true</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>localSearch</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>The search of keywords without API requests</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">localSearch: true</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>topicHover</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Allow highlighting markers on the timeline hovering over the topic</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">topicHover: true</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>keywordsGroups</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Show keywords user groups</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">keywordsGroups: true</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>showAutoGeneratedKeywords</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Show auto generated keywords. If false then show only user groups.</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">showAutoGeneratedKeywords: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>keywordsCounter</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Show keywords counts</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">keywordsCounter: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>colors</td>
+                                <td>array of strings with RGB colors</td>
+                                <td>
+                                    <p>Colors of keywords markers</p>
+                                    <p><strong>Default:</strong> ['#78c361', '#9932cc', '#ff69b4', '#6495ed', '#ffd700', '#f6a7a1', '#7fb397', '#009999']</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>toggleKeywordsBlock</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>If false, then keyword block is always opened and can't be collapsed</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">toggleKeywordsBlock: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>hasKeywordsBlockHeader</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Show/hide keywords header panel</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">hasKeywordsBlockHeader: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>showKeywordsBlock</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Show/hide keywords block</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">showKeywordsBlock: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>expandKeywordsBlock</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Expand keywords block by default</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">expandKeywordsBlock: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="transcript" class="docs-section">
+                    <h2>Transcript Block parameters</h2>
+                    <div class="parameter-section">
+                        <table class="table table-striped params">
+                            <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Descriptions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>transcriptBlock</td>
+                                <td>string</td>
+                                <td>
+                                    <p>ID of the alternative block for showing the transcript block</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">transcriptBlock: "transcriptId"</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>transcriptHeight</td>
+                                <td>integer</td>
+                                <td>
+                                    <p>Custom height for transcript block</p>
+                                    <p><strong>Default:</strong> 148</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">transcriptHeight: 250</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>transcriptWidth</td>
+                                <td>integer</td>
+                                <td>
+                                    <p>Custom width for transcript block</p>
+                                    <p><strong>Default:</strong> player or content width</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">transcriptWidth: 580</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>transcriptResizable</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Turning on the possibility to change the transcript block size</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <p><strong>Require</strong> jQuery UI</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">transcriptResizable: true</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>transcriptHighlight</td>
+                                <td>integer</td>
+                                <td>
+                                    <p>Interval of the transcript highlight time (in seconds). Minimum 5 (if less than 5, the default is 5, if 0 - forbids highlight and scrolling</p>
+                                    <p><strong>Default:</strong> 5</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">transcriptHighlight: 15</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>filterSpeaker</td>
+                                <td>string</td>
+                                <td>
+                                    <p>Initialize filter keywords by speakers. By default keywords are shown for all speakers.</p>
+                                    <p><strong>Default:</strong> 'all'</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">filterSpeaker: 'John'</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>turnTimes</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>If speaker turn info is available in the transcript, show the time each turn starts in the transcript section</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">turnTimes: true</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>lineBreak</td>
+                                <td>float</td>
+                                <td>
+                                    <p>Determines the period of time for word transferring to a new line in transcript</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">lineBreak: 1.3</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>transcriptCheckTimer</td>
+                                <td>Integer</td>
+                                <td>
+                                    <p>Time interval for checking of saving transcript</p>
+                                    <p><strong>Default:</strong> 10</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">transcriptCheckTimer: 5</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>humanOnly</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Shows the transcripts recognized by the machine and human. true - shows the transcript recognized only by human</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">humanOnly: true</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>toggleTranscriptBlock</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>If false, then transcript block is always opened and can't be collapsed</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">toggleTranscriptBlock: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>hasTranscriptBlockHeader</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Show/hide transcript header panel</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">hasTranscriptBlockHeader: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>showTranscriptBlock</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Show/hide transcript block</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">showTranscriptBlock: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>expandTranscriptBlock</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Expand transcript block by default</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">expandTranscriptBlock: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="comments" class="docs-section">
+                    <h2>Comments Block parameters</h2>
+                    <div class="parameter-section">
+                        <table class="table table-striped params">
+                            <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Descriptions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>commentsBlock</td>
+                                <td>string</td>
+                                <td>
+                                    <p>ID of the alternative block for showing the comments block</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">commentsBlock: "commentsId"</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>commentsWidth</td>
+                                <td>integer</td>
+                                <td>
+                                    <p>Custom width for comments block</p>
+                                    <p><strong>Default:</strong> player or content width</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">commentsWidth: 580</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>commentsUsername</td>
+                                <td>mixed</td>
+                                <td>
+                                    <p>Name for get/add comments from voicebase user</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">commentsUsername: "voicebaseuser"</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>commentsUserhandle</td>
+                                <td>mixed</td>
+                                <td>
+                                    <p>Name for add comments from anonymous user</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">commentsUserhandle: "Test User"</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>toggleCommentBlock</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>If false, then comment block is always opened and can't be collapsed</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">toggleCommentBlock: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>hasCommentsBlockHeader</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Show/hide comments header panel</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">hasCommentsBlockHeader: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>showCommentsBlock</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Show/hide comments block</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">showCommentsBlock: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>expandCommentsBlock</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Expand comments block by default</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">expandCommentsBlock: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="news" class="docs-section">
+                    <h2>News Block parameters</h2>
+                    <div class="parameter-section">
+                        <table class="table table-striped params">
+                            <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Descriptions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>newsBlock</td>
+                                <td>string</td>
+                                <td>
+                                    <p>ID of the alternative block for showing the news block</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">newsBlock: "newsId"</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>newsWidth</td>
+                                <td>integer</td>
+                                <td>
+                                    <p>Custom width for news block</p>
+                                    <p><strong>Default:</strong> player or content width</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">newsWidth: 580</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>newsUrl</td>
+                                <td>string</td>
+                                <td>
+                                    <p>Custom url for getting news</p>
+                                    <p><strong>Default:</strong> 'https://beta.voicebase.com/bing/search/query/'</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">newsUrl: 'https://site.com/query/'</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>toggleNewsBlock</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>If false, then news block is always opened and can't be collapsed</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">toggleNewsBlock: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>hasNewsBlockHeader</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Show/hide comments news panel</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">hasNewsBlockHeader: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>showNewsBlock</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Show/hide news block</p>
+                                    <p><strong>Default:</strong> false</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">showNewsBlock: true</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>expandNewsBlock</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Expand news block by default</p>
+                                    <p><strong>Default:</strong> true</p>
+                                    <div>
+                                        <strong>Example:</strong>
+                                        <pre><code class="javascript">expandNewsBlock: false</code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+
+                <!--Affix right-side menu-->
+            <div class="col-md-2" role="complementary" id="myScrollspy">
+                <ul class="nav nav-pills nav-stacked" id="affix_menu" data-spy="affix" >
+                    <li>
+                        <a href="#main">Main </a>
+                    </li>
+                    <li>
+                        <a href="#additional">Additional </a>
+                    </li>
+                    <li>
+                        <a href="#share">Share </a>
+                    </li>
+                    <li>
+                        <a href="#media">Media Block </a>
+                    </li>
+                    <li>
+                        <a href="#keywords">Keywords Block </a>
+                    </li>
+                    <li>
+                        <a href="#transcript">Transcript Block </a>
+                    </li>
+                    <li>
+                        <a href="#comments">Comments Block </a>
+                    </li>
+                    <li>
+                        <a href="#news">News Block </a>
+                    </li>
+                </ul>
+                <p id="back-top">
+                    <a href="#top"><span></span>Back to Top</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/readme.js"></script>
+
+</body>
+</html>

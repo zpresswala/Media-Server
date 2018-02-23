@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>JW Plugin</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="vbwidget_styles.css" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="jquery.vbwidget.js"></script>
+        <style type="text/css">
+            .content {
+                width: 640px;
+                margin: 0 auto;
+            }
+        </style>
+        <script type='text/javascript'>
+            jQuery(document).ready(function(){
+                $("#vbWidget").vbwidget({
+                    example: true,
+                    result_block_id: 'resultBlock' // this parameter set target for block of search results
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="content">
+            <div id="vbWidget"></div>
+            <div>Some Content</div>
+            <div>Results block can be placed anywhere on a page</div>
+            <div id="resultBlock"></div>
+        </div>
+    </body>
+</html>

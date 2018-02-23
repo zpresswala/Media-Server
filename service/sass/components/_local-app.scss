@@ -1,0 +1,40 @@
+.vbs-local-app .vbs-keywords-block,
+.vbs-local-app .vbs-transcript-block {
+  display: block;
+
+  .vbs-section-title {
+    display: block;
+  }
+
+  &.vbs-tab .vbs-section-title {
+    display: none;
+  }
+}
+
+.vbs-local-app.vbs-loading {
+  .vbs-keywords-block,
+  .vbs-transcript-block {
+    .vbs-section-body {
+      display: none;
+    }
+
+    .vbs-section-title {
+      background: url('../../images/ajax-loader-mini.gif') 7px center no-repeat;
+    }
+
+    &.vbs-tab .vbs-section-body {
+      display: block;
+      background: url('../../images/ajax-loader.gif') center center no-repeat;
+    }
+
+  }
+
+  .vbs-keywords-block.vbs-tab .vbs-keywords-list-wrapper {
+    display: none;
+  }
+
+}
+
+.vbs-local-app .vbs-keywords-block.vbs-tab .vbs-keywords-list-wrapper {
+  display: block;
+}

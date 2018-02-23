@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>VoiceBase Player Plugin Documentation</title>
+    <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/styles_bootstrap.css"/>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/googlecode.min.css">
+
+</head>
+<body data-spy="scroll" data-target="#myScrollspy">
+    <header id="top" class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="http://www.voicebase.com/" class="logo" target="_blank"></a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <!--<li>-->
+                        <!--<a href="index.html">Get Started</a>-->
+                    <!--</li>-->
+                    <li>
+                        <a href="players.html">Players</a>
+                    </li>
+                    <li>
+                        <a href="params.html">Parameters</a>
+                    </li>
+                    <li>
+                        <a href="methods.html">Methods</a>
+                    </li>
+                    <li class="active">
+                        <a href="webhooks.html">WebHooks</a>
+                    </li>
+                    <li>
+                        <a href="buttons.html">Buttons</a>
+                    </li>
+                    <li>
+                        <a href="widget.html">Search Widget</a>
+                    </li>
+                    <li>
+                        <a href="vb-api-devguide-07162014.pdf">API Doc</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10" role="main">
+                <p id="webhooks"><strong>WebHooks</strong> - interception of default events of buttons</p>
+                <h3>Supported webhooks:</h3>
+                <ul>
+                    <li>comment</li>
+                    <li>remove</li>
+                    <li>favoriteTrue</li>
+                    <li>favoriteFalse</li>
+                    <li>help</li>
+                    <li>evernote</li>
+                    <li>editTranscript</li>
+                    <li>print</li>
+                    <li>downloadMedia</li>
+                    <li>downloadTranscript</li>
+                    <li>socialShare</li>
+                    <li>vbShare</li>
+                    <li>orderTranscript</li>
+                    <li>removeTopic</li>
+                    <li>removeKeyword</li>
+                    <li>keywordUp</li>
+                    <li>keywordDown</li>
+                    <li>keywordFirst</li>
+                    <li>commentEdit</li>
+                    <li>commentDelete</li>
+                    <li>readermode</li>
+                    <li>readermodeExit</li>
+                    <li>fullscreen</li>
+                    <li>fullscreenExit</li>
+                </ul>
+                <h3 id="example">Example script:</h3>
+<pre><code class="javascript">
+function myCustomFunction() {
+    alert(123);
+}
+/* init player settings */
+jQuery(&#39;#player&#39;).voicebase({
+    ...
+    webHooks: {
+        socialShare: function(){
+        myCustomFunction();
+    },
+    orderTranscript: function(){
+        myCustomFunction();
+    }
+});
+</code></pre>
+                <h4>Default:</h4>
+                <img src="img/img-1.png" alt="" />
+                <h4>WebHooks:</h4>
+                <img src="img/img-2.png" alt="" />
+
+            </div>
+
+            <!--Affix right-side menu-->
+            <div class="col-md-2" role="complementary" id="myScrollspy">
+                <ul class="nav nav-pills nav-stacked" id="affix_menu" data-spy="affix" >
+
+                    <li>
+                        <a href="#webhooks">Webhooks</a>
+                    </li>
+                    <li><a href="#example">Example</a></li>
+                </ul>
+                <p id="back-top">
+                    <a href="#top"><span></span>Back to Top</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/readme.js"></script>
+
+</body>
+</html>

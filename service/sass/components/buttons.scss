@@ -1,0 +1,208 @@
+.vbs-message-btn,
+.vbs-comments-btn {
+  background: url('../../images/dialog-btn.png') no-repeat center center;
+
+  &.vbs-active {
+    background: url('../../images/dialog-btn-active.png') no-repeat center center;
+  }
+}
+
+.vbs-cloud-btn,
+.vbs-download-audio-btn {
+  background: url('../../images/download-icon.png') no-repeat center center;
+}
+
+.vbs-cloud-btn.vbs-active {
+  background: url('../../images/download-icon-active.png') no-repeat center center;
+}
+
+.vbs-del-btn {
+  background: url('../../images/trash-btn.png') no-repeat center center;
+
+  &.vbs-active {
+    background: url('../../images/trash-btn-active.png') no-repeat center center;
+  }
+}
+
+.vbs-star-btn {
+  background: url('../../images/star-btn.png') no-repeat center center;
+
+  &.vbs-active {
+    background: url('../../images/star-btn-active.png') no-repeat center center;
+  }
+}
+
+.vbs-help-btn {
+  background: url('../../images/help-btn.png') no-repeat center center;
+
+  &.vbs-active {
+    background: url('../../images/help-btn-active.png') no-repeat center center;
+  }
+}
+
+.vbs-comment-btn {
+  background: url('../../images/comment-btn.png') no-repeat center center;
+}
+
+.vbs-edit-btn {
+  background: url('../../images/edit-btn.png') no-repeat center center;
+
+  &.vbs-active {
+    background: url('../../images/edit-btn-active.png') no-repeat center center;
+  }
+}
+
+.vbs-print-btn {
+  background: url('../../images/print-icon.png') no-repeat center center;
+
+  &.vbs-active {
+    background: url('../../images/print-icon-active.png') no-repeat center center;
+  }
+}
+
+.vbs-plus-btn {
+  background: url('../../images/plus-btn.png') no-repeat center center;
+
+  &.vbs-active {
+    background: url('../../images/plus-btn-active.png') no-repeat center center;
+  }
+}
+
+.vbs-evernote-btn {
+  background: url('../../images/evernote-btn.png') no-repeat center center;
+
+  &.vbs-active {
+    background: url('../../images/evernote-btn-active.png') no-repeat center center;
+  }
+}
+
+.vbs-expand-btn {
+  background: url('../../images/expand.png') no-repeat center center;
+}
+
+.vbs-section-header {
+  .vbs-order-human-trans {
+    background: url('../../images/green-bg-btn.png') repeat-x;
+    border: 1px solid #1e8d21;
+    border-radius: 0 3px 3px 0;
+    float: right;
+    margin-top: -1px;
+
+    a {
+      background: url('../../images/cart-icon.png') 10px center no-repeat;
+      color: #fff;
+      display: block;
+      font-size: 12px;
+      font-weight: bold;
+      height: 32px;
+      line-height: 32px;
+      padding: 0 10px 0 30px;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+.vbs-readermode-btn {
+  background: url('../../images/reader-icon.png') center center no-repeat;
+}
+
+.vbs-retina {
+  .vbs-message-btn,
+  .vbs-comments-btn {
+    background: url('../../images/comment-icon-sprite.png') no-repeat 7px center;
+    background-size: 39px 17px;
+
+    &.vbs-active {
+      background-position: -17px center;
+    }
+
+  }
+
+  .vbs-cloud-btn,
+  .vbs-download-audio-btn {
+    background: url('../../images/download-icon-sprite.png') no-repeat 7px center;
+    background-size: 44px 17px;
+  }
+
+  .vbs-cloud-btn.vbs-active {
+    background-position: -21px center;
+  }
+
+  .vbs-del-btn {
+    background: url('../../images/trash-icon-sprite.png') no-repeat 8px center;
+    background-size: 43px 16px;
+
+    &.vbs-active {
+      background-position: -21px center;
+    }
+  }
+
+  .vbs-star-btn {
+    background: url('../../images/star-icon-sprite.png') no-repeat 6px center;
+    background-size: 44px 15px;
+
+    &.vbs-active {
+      background-position: -21px center;
+    }
+  }
+
+  .vbs-help-btn {
+    background: url('../../images/help-icon-sprite.png') no-repeat 7px center;
+    background-size: 42px 17px;
+
+    &.vbs-active {
+      background-position: -19px center;
+    }
+  }
+
+  .vbs-edit-btn {
+    background: url('../../images/icon-edit@2x.png') no-repeat center center;
+    background-size: 17px 17px;
+
+    &.vbs-active {
+      background: url('../../images/edit-btn-active.png') no-repeat center center;
+    }
+  }
+
+  .vbs-print-btn {
+    background: url('../../images/icon-print@2x.png') no-repeat center center;
+    background-size: 14px 17px;
+
+    &.vbs-active {
+      background: url('../../images/print-icon-active.png') no-repeat center center;
+    }
+  }
+
+  .vbs-evernote-btn {
+    background: url('../../images/evernote-icon-sprite.png') no-repeat 7px center;
+    background-size: 42px 17px;
+
+    &.vbs-active {
+      background-position: -20px center;
+    }
+  }
+
+  .vbs-expand-btn {
+    background: url('../../images/icon-expand@2x.png') no-repeat center center;
+    background-size: 17px 17px;
+  }
+
+  .vbs-section-header .vbs-order-human-trans a {
+    background: url('../../images/icon-cart-white@2x.png') 10px center no-repeat;
+    background-size: 16px 16px;
+  }
+
+  .vbs-readermode-btn {
+    background: url('../../images/icon-glasses@2x.png') center center no-repeat;
+    background-size: 18px 14px;
+  }
+}
+
+.ui-icon,
+.ui-widget-content .ui-icon {
+  background-image: url('../../images/ui-icons_454545_256x240.png');
+}
+
+.ui-icon-gripsmall-diagonal-se {
+  background-position: -83px -224px;
+}

@@ -1,0 +1,138 @@
+.vbs-edit-mode-wrapper {
+  @include overflow-touch();
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0 10%;
+  width: 80%;
+  height: 100%;
+  background: #fff;
+
+  .vbs-edition-btns {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+
+    .vbs-edition-btn {
+      height: 28px;
+      line-height: 28px;
+      border: 1px solid #c4ccd1;
+      border-radius: 3px;
+      padding: 0 10px;
+      font-size: 12px;
+      color: #5f656d;
+      text-align: center;
+      display: block;
+      float: left;
+      font-weight: bold;
+      margin-right: 8px;
+      background: url('../../images/striped-bg.png');
+
+      &:hover {
+        box-shadow: 0 0 4px #449de0;
+      }
+    }
+
+    .vbs-edit-two-btns {
+      float: left;
+      margin-right: 10px;
+
+      .vbs-edition-btn {
+        &:first-child {
+          margin-right: 0;
+          border-radius: 3px 0 0 3px;
+          border-right: 0;
+        }
+
+        &:last-child {
+          border-radius: 0 3px 3px 0;
+        }
+      }
+    }
+  }
+
+  .vbs-save-exit-btns {
+    float: right;
+
+    a {
+      height: 28px;
+      line-height: 28px;
+      border-radius: 3px;
+      padding: 0 10px;
+      font-size: 12px;
+      color: #fff;
+      text-shadow: 0 -1px 0 #000;
+      text-align: center;
+      display: block;
+      float: left;
+      font-weight: bold;
+      margin-left: 8px;
+    }
+  }
+
+  .vbs-record-player {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .vbs-edit-instr {
+    padding: 17px;
+    border-bottom: 1px solid #ddd;
+
+    .vbs-mouse-btns-desc {
+      float: right;
+
+      span {
+        margin-left: 25px;
+        font-size: 13px;
+        display: inline-block;
+        padding-left: 20px;
+
+        em {
+          color: #0070bb;
+          font-style: normal;
+          font-weight: bold;
+        }
+
+        &:first-child {
+          background: url('../../images/mouse-left-btn.png') no-repeat left center;
+        }
+
+        &:last-child {
+          background: url('../../images/right-mouse-btn.png') no-repeat left center;
+        }
+      }
+    }
+  }
+
+  .vbs-edition-block {
+    padding: 20px 0;
+    line-height: 1.7;
+
+    .vbs-edit-speaker {
+      font-weight: bold;
+    }
+  }
+
+  .vbs-volume-toolbar {
+    right: 0;
+  }
+
+  .vbs-3-left-btns .vbs-timeline {
+    margin: 0 50px 0 140px;
+  }
+
+}
+
+.vbs-save-btn {
+  background: url('../../images/green-bg-btn.png') repeat-x;
+  border: 1px solid #1e8d21;
+  background-size: contain;
+}
+
+.vbs-exit-btn {
+  background: url('../../images/striped-red-bg.png') repeat-x;
+  border: 1px solid #ac212f;
+  background-size: contain;
+}
+

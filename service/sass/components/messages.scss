@@ -1,0 +1,122 @@
+.vbs-reload-message-wrapper.vbs-large-error-text {
+  height: 70px;
+
+  .vbs-reload-message {
+    width: 200px;
+
+    span {
+      height: 70px;
+    }
+  }
+
+  .vbs-reload-btn {
+    height: 36px;
+    position: relative;
+    top: 50%;
+    margin-top: -18px;
+  }
+}
+
+.vbs-loader {
+  background: url('../../images/ajax-loader.gif')no-repeat;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  left: 50%;
+  margin-left: -16px;
+  top: 50%;
+  margin-top: -16px;
+  z-index: 999;
+}
+
+
+.vbs-saving,
+.vbs-success-saving {
+  font-size: 13px;
+  font-weight: bold;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  padding-bottom: 10px;
+
+}
+
+.vbs-saving {
+  color: #0079c0;
+
+  .vbs-saving-loader {
+    background: url('../../images/ajax-loader-mini-blue.gif') 0 0 no-repeat;
+    width: 16px;
+    height: 16px;
+    float: left;
+  }
+}
+
+.vbs-success-saving {
+  color: #00a10e;
+
+  .vbs-saving-loader {
+    background: url('../../images/success.png') 0 0 no-repeat;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    float: left;
+  }
+}
+
+.vbs-saving .vbs-saving-inner,
+.vbs-success-saving .vbs-saving-inner {
+  display: table;
+  margin: auto;
+}
+
+.vbs-saving .vbs-saving-message,
+.vbs-success-saving .vbs-saving-message {
+  float: left;
+  margin-left: 5px;
+}
+
+.vbs-text-error-message {
+  text-align: center;
+  color: #bc5655;
+  font-size: 13px;
+  font-weight: bold;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.vbs-msg {
+  margin: 5px 0;
+
+  &.vbs-msg-alert {
+    color: #e93447;
+  }
+}
+
+.vbs-message {
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  padding-bottom: 10px;
+
+}
+
+.vbs-message-error {
+  color: #bc5655;
+}
+
+.vbs-message-info {
+  color: #0070bf;
+}
+
+.vbs-message-success {
+  color: #bc5655;
+}
+
+.vbs-cancel-search {
+  color: #bc5655;
+  text-decoration: underline;
+}
+

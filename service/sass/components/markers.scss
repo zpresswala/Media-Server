@@ -1,0 +1,76 @@
+.vbs-markers,
+.vbs-custom-markers {
+  display: block;
+  padding: 6px 0;
+  width: 100%;
+  z-index: 90;
+
+  .vbs-comment {
+    background-color: #edf0f8;
+    border-radius: 2px;
+    display: none;
+    left: 0;
+    margin-top: 12px;
+    padding: 3px 0 5px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+  }
+}
+
+.vbs-markers-hovers {
+  display: block;
+  padding: 6px 0;
+  width: 100%;
+  z-index: 90;
+}
+
+.vbs-record-preview .vbs-marker {
+  @include overflow-touch(visible);
+  box-shadow: 0 1px 0 #fff;
+  cursor: pointer;
+  left: auto;
+  margin-left: -4px;
+  top: 19px;
+}
+
+.vbs-marker {
+  border-image: none;
+  border: 5px solid transparent;
+  border-top-width: 0;
+  border-bottom-width: 11px;
+  box-shadow: 0 1px 0 #000;
+  left: 8px;
+  overflow: hidden;
+  position: absolute;
+  top: 19px;
+//  width: 0;
+
+  ins {
+    background-image: url('../../images/marker_mask.png');
+    cursor: pointer;
+    display: block;
+    height: 11px;
+    margin-left: -5px;
+    overflow: hidden;
+    position: absolute;
+    text-decoration: none;
+    width: 10px;
+  }
+}
+
+a.vbs-marker:hover {
+  border-bottom-color: #bbb !important;
+}
+
+.vbs-record-preview .vbs-custom-marker {
+  top: 25px;
+
+  ins {
+    background: #1E8D21 none;
+    width: 10px;
+    height: 10px;
+  }
+}
+

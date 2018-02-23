@@ -1,0 +1,42 @@
+<rss version="2.0" xmlns:jwplayer="http://rss.jwpcdn.com/">
+    <channel>
+        <item>
+            <title>Lecture 06: sep 15</title>
+            <jwplayer:source file="http://uwinnipegcdn.daemondefense.com/bio_hum_con/06-bio_hum_con-sep15.mp4" />
+            <!--<jwplayer:image>http://vod.uwinnipeg.ca/code/images/vidimage.png</jwplayer:image>-->
+            <jwplayer:vbs_mediaid>5440952674785</jwplayer:vbs_mediaid>
+        </item>
+        <item>
+            <title>Lecture 05: sep 12</title>
+            <jwplayer:source file="http://uwinnipegcdn.daemondefense.com/bio_hum_con/05-bio_hum_con-sep12.mp4" />
+            <!--<jwplayer:image>http://vod.uwinnipeg.ca/code/images/vidimage.png</jwplayer:image>-->
+            <jwplayer:vbs_mediaid>5440a7eb4a0d2</jwplayer:vbs_mediaid>
+        </item>
+        <item>
+            <title>Lecture 04: sep 10</title>
+            <jwplayer:source file="http://uwinnipegcdn.daemondefense.com/bio_hum_con/04-bio_hum_con-sep10.mp4" />
+            <!--<jwplayer:image>http://vod.uwinnipeg.ca/code/images/vidimage.png</jwplayer:image>-->
+            <jwplayer:vbs_mediaid>5423ae49311c2</jwplayer:vbs_mediaid>
+        </item>
+<!--
+        <item>
+            <title>Dual</title>
+            <jwplayer:source file="http://uwinnipegcdn.daemondefense.com/bio_hum_con/03-bio_hum_con-sep08.mp4" />
+            <jwplayer:image>http://vod.uwinnipeg.ca/code/images/vidimage.png</jwplayer:image>
+            <jwplayer:vbs_mediaid>5423ae49311c2</jwplayer:vbs_mediaid>
+        </item>
+        <item>
+            <title>Lecture 02: sep 05</title>
+            <jwplayer:source file="http://uwinnipegcdn.daemondefense.com/bio_hum_con/02-bio_hum_con-sep05.mp4" />
+            <jwplayer:image>http://vod.uwinnipeg.ca/code/images/vidimage.png</jwplayer:image>
+            <jwplayer:vbs_mediaid>5423ae49311c2</jwplayer:vbs_mediaid>
+        </item>
+        <item>
+            <title>Lecture 01: sep 03</title>
+            <jwplayer:source file="http://uwinnipegcdn.daemondefense.com/bio_hum_con/01-bio_hum_con-sep03.mp4" />
+            <jwplayer:image>http://vod.uwinnipeg.ca/code/images/vidimage.png</jwplayer:image>
+            <jwplayer:vbs_mediaid>5423a9a7c1fb5</jwplayer:vbs_mediaid>
+        </item>
+-->
+    </channel>
+</rss>

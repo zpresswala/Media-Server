@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>VoiceBase Player Plugin Documentation</title>
+    <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/styles_bootstrap.css"/>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/googlecode.min.css">
+
+</head>
+<body data-spy="scroll" data-target="#myScrollspy">
+    <header id="top" class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="http://www.voicebase.com/" class="logo" target="_blank"></a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <!--<li>-->
+                        <!--<a href="index.html">Get Started</a>-->
+                    <!--</li>-->
+                    <li>
+                        <a href="players.html">Players</a>
+                    </li>
+                    <li>
+                        <a href="params.html">Parameters</a>
+                    </li>
+                    <li>
+                        <a href="methods.html">Methods</a>
+                    </li>
+                    <li>
+                        <a href="webhooks.html">WebHooks</a>
+                    </li>
+                    <li class="active">
+                        <a href="buttons.html">Buttons</a>
+                    </li>
+                    <li>
+                        <a href="widget.html">Search Widget</a>
+                    </li>
+                    <li>
+                        <a href="vb-api-devguide-07162014.pdf">API Doc</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10" role="main">
+                <h2 id="buttons">Buttons</h2>
+                <p>actionFlag - it is used for turning on/off the buttons</p>
+                <h4>Buttons list (hover over to see example):</h4>
+                <ul class="btn-examples">
+                    <li><span class="vb-tooltip" data-src="img/img-11.png" data-toggle="popover" data-content="">downloadMedia <span class="vb-fade">[true]</span></span></li>
+                    <li><span class="vb-tooltip" data-src="img/img-12.png">remove <span class="vb-fade">[true]</span></span></li>
+                    <li><span class="vb-tooltip" data-src="img/img-13.png">favorite <span class="vb-fade">[true]</span></span></li>
+                    <li><span class="vb-tooltip" data-src="img/img-14.png">help <span class="vb-fade">[true]</span></span></li>
+                    <li><span class="vb-tooltip" data-src="img/img-26.png">fullscreen <span class="vb-fade">[true]</span></span></li>
+
+                    <li><span class="vb-tooltip" data-src="img/img-16.png">share <span class="vb-fade">[true]</span> <span class="more">*</span> <a href="#share">additional setup is required</a></span></li>
+
+                    <li><span class="vb-tooltip" data-src="img/img-15.png">evernote <span class="vb-fade">[true]</span> <span class="more">*</span> <a href="#evernote">additional setup is required</a></span></li>
+
+                    <li><span class="vb-tooltip" data-src="img/img-19.png">prev <span class="vb-fade">[true]</span></span></li>
+                    <li><span class="vb-tooltip" data-src="img/img-18.png">next <span class="vb-fade">[true]</span></span></li>
+
+                    <li><span class="vb-tooltip" data-src="img/img-21.png">downloadTranscript <span class="vb-fade">[true]</span></span></li>
+                    <li><span class="vb-tooltip" data-src="img/img-22.png">edit <span class="vb-fade">[true]</span></span></li>
+                    <li><span class="vb-tooltip" data-src="img/img-23.png">print <span class="vb-fade">[true]</span></span></li>
+                    <li><span class="vb-tooltip" data-src="img/img-24.png">readermode <span class="vb-fade">[true]</span></span></li>
+                    <li><span class="vb-tooltip" data-src="img/img-25.png">orderTranscript <span class="vb-fade">[true]</span></span></li>
+                </ul>
+                <p>Example script:</p>
+                    <pre><code class="javascript">
+/* init VoiceBase plugin settings */
+jQuery(&#39;#player&#39;).voicebase({
+    ...
+    actionFlag: {
+        remove: false,
+        comment: false
+    }
+});
+                    </code></pre>
+                <p>Default:</p>
+                <img src="img/img-3.png" alt=""/>
+                <p>Disable <i>Remove</i> and <i>Comment</i> buttons:</p>
+                <img src="img/img-4.png" alt=""/>
+
+                <h2 id="additional">Additional parameters:</h2>
+                <h4 id="share">Share</h4>
+                <p>To have Share function accessible you need to add <a href="https://www.addthis.com/get/sharing" target="_blank">addThis</a> library:</p>
+                    <pre><code class="html">&lt;script type=&quot;text/javascript&quot;
+                        src=&quot;//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51ae6dc64168357f&quot;&gt;&lt;/script&gt;</code></pre>
+                <img src="img/img-28.png" alt=""/>
+                <img src="img/img-29.png" alt=""/>
+
+                <h4 id="evernote">Evernote</h4>
+                <p>To have export function to Evernote accessible you need to add <a href="https://developers.inkfilepicker.com/docs/web/" target="_blank">filepicker</a> library and install API Key:</p>
+<pre><code class="html">&lt;script type=&quot;text/javascript&quot; src=&quot;//api.filepicker.io/v1/filepicker.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+    filepicker.setKey(&#39;YourFilepickerApiKey&#39;);
+    &lt;/script&gt;</code></pre>
+                <img src="img/img-27.png" alt="" />
+
+            </div>
+
+            <!--Affix right-side menu-->
+            <div class="col-md-2" role="complementary" id="myScrollspy">
+                <ul class="nav nav-pills nav-stacked" id="affix_menu" data-spy="affix" >
+
+                    <li>
+                        <a href="#buttons">Buttons</a>
+                    </li>
+                    <li><a href="#additional">Additional parameters</a></li>
+                </ul>
+                <p id="back-top">
+                    <a href="#top"><span></span>Back to Top</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/readme.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>

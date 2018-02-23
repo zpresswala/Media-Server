@@ -1,0 +1,1 @@
+D:\uwamp\bin\php\php-5.4.31\php.exe -c "D:\uwamp\bin\php\php-5.4.31\php_uwamp.ini" -f D:\uwamp\www\voicebase\cronjob.php

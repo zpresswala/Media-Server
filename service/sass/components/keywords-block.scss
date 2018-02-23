@@ -1,0 +1,241 @@
+// keywords block with topics
+.vbs-keywords-wrapper {
+  overflow: hidden;
+
+  .vbs-topics {
+    float: left;
+    width: 30%;
+
+    .vbs-topics-list {
+      li {
+        padding: 5px 25px 5px 10px;
+        position: relative;
+
+        > a {
+          color: #0079c0;
+          font-size: 13px;
+          font-weight: bold;
+          display: block;
+          overflow: hidden;
+          white-space: normal;
+          text-overflow: ellipsis;
+        }
+
+        .vbs-cross-btn {
+          cursor: pointer;
+          background: url('../../images/trash-btn-light.png')no-repeat;
+          width: 14px;
+          height: 17px;
+          display: block;
+
+          &:hover {
+            background: url('../../images/trash-btn.png')no-repeat;
+          }
+        }
+
+        &:hover {
+          background: #eee;
+        }
+
+        &.vbs-disabled,
+        &.vbs-disabled:hover {
+          background: #fefefe;
+        }
+      }
+
+      .vbs-disabled {
+        > a {
+          color: #bebebe;
+          cursor: default;
+        }
+      }
+
+      .vbs-active {
+        background: #eee;
+
+        > a {
+          color: #999;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+
+      .vbs-all-topics {
+        text-transform: uppercase;
+      }
+
+      .group {
+        padding-left: 30px;
+        background: url('../../images/group-icon.png') no-repeat 10px center;
+
+        &.vbs-active {
+          background: #eee url('../../images/group-icon.png') no-repeat 10px center;
+        }
+
+        &:hover {
+          background: #eee url('../../images/group-icon.png') no-repeat 10px center;
+        }
+      }
+    }
+
+  }
+
+}
+
+// Keywords links
+.vbs-keywords-list-wrapper {
+  display: inline-block;
+  width: 70%;
+  background: #eee;
+
+  .vbs-keywords-list-tab {
+    padding: 10px 0 10px 10px;
+
+    ul {
+      display: none;
+      width: 100%;
+      float: left;
+      margin-right: 10px;
+
+      &.vbs-active {
+        display: block;
+      }
+    }
+
+    li {
+      margin-bottom: 10px;
+      float: left;
+      width: 28.3%;
+      margin-right: 5%;
+      line-height: 1;
+      word-wrap: break-word;
+
+      a,
+      span {
+        color: #0079c0;
+        font-size: 12px;
+        line-height: 1;
+      }
+
+      a {
+        &.bold {
+          font-weight: bold;
+        }
+
+        &:hover {
+          color: #2099e0;
+        }
+      }
+
+      span {
+        color: #999;
+      }
+
+    }
+  }
+
+  &.vbs-one-col .vbs-keywords-list-tab li {
+    width: 97.5%;
+  }
+
+  &.vbs-two-col .vbs-keywords-list-tab li {
+    width: 45%;
+  }
+
+  &.vbs-three-col .vbs-keywords-list-tab li {
+    width: 28.3%;
+  }
+
+  &.vbs-four-col .vbs-keywords-list-tab li {
+    width: 20%;
+  }
+
+  &.vbs-five-col .vbs-keywords-list-tab li {
+    width: 15%;
+  }
+
+  &.vbs-auto-columns .vbs-keywords-list-tab ul {
+    display: block;
+  }
+
+}
+
+.vbs-more-btn {
+  height: 42px;
+  border-top: 1px solid #ddd;
+  line-height: 42px;
+  text-align: center;
+
+  a {
+    color: #bbb;
+    font-size: 13px;
+    font-weight: bold;
+  }
+}
+
+.vbs-keywords-block {
+  .vbs-topics {
+
+    &.vbs-no-visible-topics {
+      background: #eee;
+    }
+
+    .vbs-hidden-topic {
+      display: none;
+    }
+
+    .vbs-topic-del-btn-wrap {
+      display: none;
+    }
+
+    &.vbs-edit-topics {
+      .vbs-topic-del-btn-wrap {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+      }
+
+      .vbs-active .vbs-topic-del-btn-wrap {
+        display: block;
+      }
+
+      .vbs-all-topics .vbs-topic-del-btn-wrap,
+      .group .vbs-topic-del-btn-wrap {
+        display: none;
+      }
+    }
+
+    &.vbs-no-header {
+      .vbs-section-body .vbs-keywords-wrapper {
+        border-top: 1px solid #c8cfd3;
+      }
+
+      &.vbs-tab .vbs-section-body .vbs-keywords-wrapper {
+        border-top: 0;
+      }
+
+    }
+  }
+
+  .vbs-keyword-message {
+    background: #eee;
+  }
+}
+
+
+.less-600px {
+  .vbs-keywords-list-wrapper .vbs-keywords-list-tab li {
+    width: 45%;
+  }
+
+  .vbs-keywords-block .vbs-section-body {
+    margin-top: 55px;
+  }
+
+  .vbs-keywords-block .vbs-keywords-wrapper {
+    border: 1px solid #c8cfd3;
+    border-radius: 3px;
+  }
+
+
+}
